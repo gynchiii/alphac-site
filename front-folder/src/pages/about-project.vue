@@ -4,7 +4,7 @@
       <q-toolbar class="absolute-top">
 
         <q-toolbar-title class="titleFont">
-          <q-btn href="javascript:location.reload(true)" to="/" size="lg"
+          <q-btn to="/" size="lg"
             class=" q-pl-xl titleFont text-white text-bold" rounded flat class-flex-flex-center q-ma-sm>
             <q-img
               src="https://cdn.discordapp.com/attachments/459557016042471454/1022390261957021717/299085275_1297684320974924_880665858629312467_n-removebg-preview.png"
@@ -28,82 +28,7 @@
 
         </div>
       </q-toolbar>
-      <div style="width: 100vw;" v-if="pageCounter == 0">
-        <div style="width: 100vw; height: 100vh;" class="flex bgg-solana column flex-center ">
-          <div style="border-radius: 15px;" class="bgg-dark shadow-8">
-            <div style="margin-top: 5vh;" class="col text-end q-ml-md flex flex-center q-pa-lg">
-              <div style="font-size: 9vh;" class="mainFont text-center text-bold flex flex-center ">
-                <span class="typewriter text-grey-4" v-if="pt"><span style="opacity: 0.78;" class="text-accent"><span
-                      style="opacity: 0.78;" class="text-primary">Block</span>chain</span> em doses diárias</span>
-                <span class="typewriter text-grey-4" v-if="!pt"><span style="opacity: 0.78;" class="text-accent"><span
-                      style="opacity: 0.78;" class="text-primary">Block</span>chain</span> in daily doses</span>
 
-              </div>
-            </div>
-            <div style="margin-top: 1vh;" class="col text-end q-ml-md flex flex-center q-pa-lg">
-              <div style="font-size: 5vh;" class="mainFont text-italic flex flex-center text-grey-4">
-                <span data-show-after="1000" class="fadeIn" v-if="pt">você escolha a frequência</span>
-                <span class="fadeIn" v-if="!pt">You choose the frequency</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="bg-dark" style="width: 100vw;" v-if="pageCounter == 1">
-      <div style="width: 100vw; height: 100vh;" class="flex flex-center full-width full-height row">
-        <div style="margin-top: -3vh;" class="col flex flex-center q-pa-lg">
-          <transition appear enter-active-class="animated backInDown" leave-active-class="animated backOutDown">
-            <div style="font-size: 6vh; text-align: end;" class="titleFont text-bold flex flex-center text-white">
-              <span v-if="pt">
-                AlphaC não é só uma DAO, mas sim um conceito. Um lugar.
-              </span>
-              <span v-if="!pt">
-                AlphaC isn't just a DAO, but a concept. A place.
-              </span>
-            </div>
-          </transition>
-        </div>
-        <div class="col flex flex-center q-pa-md">
-          <transition appear enter-active-class="animated fadeIn">
-            <div style="font-size: 15vh;" class="titleFont solanaImage text-center flex flex-center text-accent">
-              <q-img style="width: 22vw; border-radius: 25px;"
-                src="https://cdn.discordapp.com/attachments/459557016042471454/1022354189235519488/299085275_1297684320974924_880665858629312467_n.jpg">
-              </q-img>
-            </div>
-          </transition>
-        </div>
-        <div style="margin-top: 30vh;" class="col flex flex-center q-pa-lg">
-          <transition appear enter-active-class="animated backInUp" leave-active-class="animated backOutUp">
-            <div style="font-size: 6vh;" class="titleFont text-bold flex flex-center text-white">
-              <span v-if="pt">Completo, remodelado, feito pela comunidade, para a comunidade.</span>
-              <span v-if="!pt">Complete, rebuilded, made by community, to the community</span>
-            </div>
-          </transition>
-        </div>
-
-      </div>
-    </div>
-    <div class="bg-dark" style="width: 100vw;" v-if="pageCounter == 2">
-      <div style="width: 100vw; height: 100vh;" class="flex flex-center full-width full-height row">
-        <div class="wrap q-gutter-y-md bg-dark">
-          <a href="/#/aboutteam" target="" to="/aboutteam" class="underlined underlined--gradient"  >Sobre o Time</a>
-          <p><a   href="/#/aboutproject" target="" to="/aboutproject" class="underlined underlined--reverse">Sobre o Projeto</a></p>
-        </div>
-
-
-      </div>
-    </div>
-    <div v-if="pageCounter != 2" style="width: 100vw; height: 100vh; margin-top: vh; opacity: 0.9;"
-      class="flex bg-dark flex-center full-width full-height items-center">
-      <div style="width: 100vw;" class="flex flex-center row q-pa-lg">
-        <q-btn @click="(pageCounter +++ 1)" style="width: 100vw; height: 5vh;"
-          class="titleFont  absolute-bottom flex flex-center row q-gutter-x-sm q-pa-md">
-          <span v-if="pt" style="text-decoration: underline;" class=" text-primary spanText col">Continuar</span>
-          <span v-if="!pt" style="text-decoration: underline;" class=" text-primary spanText col">Continue</span>
-          <q-icon class="text-white" size="xs" name="arrow_right"></q-icon>
-        </q-btn>
-      </div>
 
     </div>
 
@@ -116,7 +41,7 @@
 import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
-  name: 'IndexPage',
+  name: 'about-project',
   data() {
     return {
       pageCounter: ref(0),

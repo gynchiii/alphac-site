@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-page-container>
-      <router-view />
+    <q-page-container >
+      <router-view  />
     </q-page-container>
   </q-layout>
 </template>
@@ -33,5 +33,10 @@ export default defineComponent({
 
 .titleFont {
   font-family: 'Spline Sans Mono', monospace;
+}
+
+* {
+  padding: 0;
+  margin: 0;
 }
 </style>
