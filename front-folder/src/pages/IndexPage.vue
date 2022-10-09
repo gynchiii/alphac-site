@@ -87,8 +87,32 @@
     <div class="bg-dark" style="width: 100vw;" v-if="pageCounter == 2">
       <div style="width: 100vw; height: 100vh;" class="flex flex-center full-width full-height row">
         <div class="wrap q-gutter-y-md bg-dark">
-          <a href="/#/aboutteam" target="" to="/aboutteam" class="underlined underlined--gradient"  >Sobre o Time</a>
-          <p><a   href="/#/aboutproject" target="" to="/aboutproject" class="underlined underlined--reverse">Sobre o Projeto</a></p>
+          <transition appear class="transition-1" enter-active-class="animated  backInUp"
+            leave-active-class="animated backInDown">
+            <p><a @mouseover="aboutTeamBg = true" @mouseleave="aboutTeamBg = false" href="/#/aboutteam" target=""
+                to="/aboutteam" class="underlined underlined--reverse">
+                <q-tooltip style="width: 14vw; height: 13vh;">
+                  <q-img style="width: 100%; height: 100%;"
+                    src="https://cdn.discordapp.com/attachments/459557016042471454/1028440057780129792/unknown.png">
+
+                  </q-img>
+                </q-tooltip>
+                Sobre o Time
+              </a></p>
+          </transition>
+          <transition appear class="transition-2" enter-active-class="animated backInUp"
+            leave-active-class="animated backInDown">
+            <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false" href="/#/aboutproject"
+                target="" to="/aboutproject" class="underlined underlined--reverse">
+                <q-tooltip style="width: 14vw; height: 13vh;">
+                  <q-img style="width: 100%; height: 100%;"
+                    src="https://cdn.discordapp.com/attachments/459557016042471454/1028440057780129792/unknown.png">
+
+                  </q-img>
+                </q-tooltip>
+                Sobre o Projeto
+              </a></p>
+          </transition>
         </div>
 
 
@@ -120,6 +144,7 @@ export default defineComponent({
   data() {
     return {
       pageCounter: ref(0),
+      pageCounter2: ref(0),
       pt: true
     }
   }
@@ -144,6 +169,12 @@ export default defineComponent({
   background-position: center;
   background-size: cover;
 }
+
+.transition-1 {
+  animation-delay: 1s;
+  transition-duration: 1;
+}
+
 
 .bgg-dark {
   background-color: rgba(51, 49, 56, 0.18);

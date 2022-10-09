@@ -108,7 +108,9 @@ module.exports = configure(function (ctx) {
       "backInUp",
       "backOutDown",
       "backOutUp",
-      "fadeIn"
+      "fadeIn",
+      "backInUp",
+      "backInDown"
     ],
 
     // https://v2.quasar.dev/quasar-cli-webpack/developing-ssr/configuring-ssr

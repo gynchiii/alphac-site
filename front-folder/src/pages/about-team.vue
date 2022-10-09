@@ -1,8 +1,7 @@
 <template>
-  <q-page class="flex bg-dark flex-center">
-    <div class="bg-dark" style="width: 100vw; height: 100vh;">
+  <q-page stylçe=" height: 100vh;" class="flex bg-dark flex-center">
+    <div class="bg-dark" style="width: 100vw; height: 100%;">
       <q-toolbar class="absolute-top">
-
         <q-toolbar-title class="titleFont">
           <q-btn to="/" size="lg" class=" q-pl-xl titleFont text-white text-bold" rounded flat class-flex-flex-center
             q-ma-sm>
@@ -14,8 +13,14 @@
           </q-btn>
         </q-toolbar-title>
 
-        <div class="text-dark flex flex-center q-gutter-x-md q-py-md q-pr-xl row">
+        <div class="text-dark q-gutter-md flex flex-center q-gutter-x-md q-py-md q-pr-xl row">
           <q-btn-group outline>
+            <div style="border-radius: 5px;" class="flex q-ma-xs q-gutter-x-none bg-grey-7 ">
+              <q-btn @click="pt = false" rounded color="dark" flat style="opacity: 0.8;"
+                class="titleFont  text-white text-bold" v-if="pt" label="Sobre o Projeto" />
+                <q-btn @click="pt = false" rounded color="dark" flat style="opacity: 0.8;"
+                class="titleFont  text-white text-bold" v-if="!pt" label="About Project" />
+                </div>
             <div style="border-radius: 5px;" class="flex q-ma-xs q-gutter-x-none bg-white">
               <q-btn @click="pt = false" rounded color="dark" flat style="opacity: 0.8;"
                 class="titleFont  text-dark text-bold" v-if="pt" label="EN" />
@@ -29,92 +34,45 @@
         </div>
       </q-toolbar>
 
-      <div style="width: 100vw; margin-top: 30vh;"
-        class="container bg-dark flex q-mb-md q-mt-md row flex-center q-gutter-x-md items-center justify-between">
-        <div class="col flex bg-dark flex-center">
-          <q-card style="top: -8em;" class="my-card-xl q-mb-xl bg-transparent" flat bordered>
-            <div class="flex items-center justify-center">
-              <q-img style="border-radius: 25px 25px 0px 0px;" class="backgroundImage0-xl" />
-            </div>
-
-            <q-card-section style="opacity: 0.9" class="bg-black">
-              <div class="text-overline textKdam text-white">co-founder.</div>
-              <div class="text-h5 text-white textKdam q-mt-sm q-mb-xs">Danilo</div>
-              <div class="text-caption textKdam bg-black text-grey">
-                <span v-if="pt" class="">Empresário</span> <span v-if="!pt" class="">Businessman</span> <br> <br> <span class="q-gutter-x-xs text-center">
-                  <q-icon size="xs" color="red" name="fa-solid fa-flag" /> <span
-                    class="text-bold text-subtitle2">USA</span>
-                </span>
-              </div>
-            </q-card-section>
-
-            <q-card-actions style="opacity: 0.8" class="bg-black">
-              <q-btn target="_blank" href="https://twitter.com/Dw3Rainbow" to="" class="textKdam text-caption"
-                icon-right="fa-brands fa-twitter" flat color="dark" text-color="white" />
-
-              <q-space />
-              <q-btn v-if="!pt" class="text-bold text-italic" color="white" rounded flat dense :label="expanded0 ? 'OK' : 'About'"
-                :icon="expanded0 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'" @click="expanded0 = !expanded0" />
-              <q-btn v-if="pt" class="text-bold text-italic" color="white" rounded flat dense :label="expanded0 ? 'OK' : 'Sobre'"
-                :icon="expanded0 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'" @click="expanded0 = !expanded0" />
-            </q-card-actions>
-
-            <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
-              <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded0">
-                <q-separator />
-                <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
-                  class="text-subitle2 text-center titleFont text-white bg-black">
-                  <div v-if="pt" class="flex flex-center">
-                    <span clas="text-h5">"</span> Diretor Biz Dev & Partnerships na Sherwa | Gaming & Esports | Inovação
-                    &
-                    Estratégia | Web 3.0 &
-                    Criador de conteúdo NFT. <br>
-                    <span style="text-decoration: underline;" class="text-italic"> Criador do AlphaC </span> <span
-                      clas="text-h5">"</span>
-                  </div>
-                  <div v-if="!pt" class="flex flex-center">
-                    <span clas="text-h5">"</span> Director Biz Dev & Partnerships at Sherwa | Gaming & Esports |
-                    Innovation
-                    &
-                    Strategy | Web 3.0 &
-                    NFT Content Creator. <br>
-                    <span style="text-decoration: underline;" class="text-italic"> Criador do AlphaC </span> <span
-                      clas="text-h5">"</span>
-                  </div>
-                </q-card-section>
-              </div>
-            </q-slide-transition>
-          </q-card>
-
-
+        <div style="width: 100vw; heigh: 14vh; margin-top: 25vh;" class="flex items-center justify-center flex-center text-center ">
+          <h2 class="text-bold mainFont text-white">
+            Founders <span class="blink">|</span>
+          </h2>
         </div>
+
+      <div style="width: 100vw; padding-bottom: 40vh; margin-top: 30vh;"
+        class="container bg-dark flex q-mb-md row flex-center q-gutter-x-sm  justify-center">
         <div class="col bg-dark flex flex-center">
           <q-card style="top: -7em; border-radius: 25px;" class="my-card-xl q-mb-xl bg-transparent" flat bordered>
             <div style="border-radius: 25px;" class="flex items-center justify-center">
-              <q-img style="border-radius: 25px 25px 0px 0px;" class="backgroundImage1-xl" />
+              <q-img style="border-radius: 25px 25px 0px 0px;" class="backgroundImage0-xl" />
             </div>
+
 
             <q-card-section style="opacity: 0.9" class="bg-black">
               <div class="text-overline textKdam text-white">co-founder.</div>
               <div class="text-h5 text-white textKdam q-mt-sm q-mb-xs">Fernando</div>
               <div class="text-caption textKdam bg-black text-grey">
-                <span v-if="pt">Streamer/Empresário</span> <span v-if="!pt">Streamer/Businessman</span> <br> <br> <span class="q-gutter-x-xs text-center">
+                <span class="text-italic" v-if="pt">RainbowD</span> <span v-if="!pt">Aka RainbowD</span> <br> <br> <span
+                  class="q-gutter-x-xs text-center"> </span>
+                <span v-if="pt">Streamer/Empresário</span> <span v-if="!pt">Streamer/Businessman</span> <br> <br> <span
+                  class="q-gutter-x-xs text-center">
                   <q-icon size="xs" color="green" name="fa-solid fa-flag" /> <span
                     class="text-bold text-subtitle2">BR</span>
                 </span>
               </div>
             </q-card-section>
 
-            <q-card-actions style="opacity: 0.8" class="bg-black">
+            <q-card-actions style="opacity: 0.8; border-radius: 0px 0px 4px 4px;" class="bg-black">
               <q-btn class="textKdam text-caption" icon-right="fa-brands fa-twitter" flat color="dark"
                 text-color="white" />
 
               <q-space />
-              <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded1 ? 'OK' : 'Sobre'" color="white" rounded
-                flat dense :icon="expanded1 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+              <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded1 ? 'OK' : 'Sobre'"
+                color="white" rounded flat dense :icon="expanded1 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
                 @click="expanded1 = !expanded1" />
-                <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded1 ? 'OK' : 'About'" color="white" rounded
-                flat dense :icon="expanded1 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+              <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded1 ? 'OK' : 'About'"
+                color="white" rounded flat dense :icon="expanded1 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
                 @click="expanded1 = !expanded1" />
             </q-card-actions>
 
@@ -131,127 +89,200 @@
                       clas="text-h5"> "</span>
                   </div>
                   <div v-if="!pt" class="flex flex-center">
-                      <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
-                      online casino
-                      <br>
-                      <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
-                        clas="text-h5"> "</span>
-                    </div>
+                    <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
+                    online casino
+                    <br>
+                    <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
+                      clas="text-h5"> "</span>
+                  </div>
                 </q-card-section>
               </div>
             </q-slide-transition>
           </q-card>
-
-
         </div>
+        <div class="col bg-dark flex flex-center">
+          <q-card style="top: -7em; border-radius: 25px;" class="my-card-xl q-mb-xl bg-transparent" flat bordered>
+            <div style="border-radius: 25px;" class="flex items-center justify-center">
+              <q-img style="border-radius: 25px 25px 0px 0px;" class="backgroundImage1-xl" />
+            </div>
 
-        <div style="width: 100vw; height: 100vh; margin-top: 55vh;" class="flex flex-center">
-
-          <div class="col bg-dark flex flex-center">
-            <q-card style="top: -8em; border-radius: 25px;" class="my-card-xl q-mb-xl bg-transparent" flat bordered>
-              <div style="border-radius: 25px;" class="flex items-center justify-center">
-                <q-img style="border-radius: 25px 25px 0px 0px;" class="backgroundImage1-xl" />
+            <q-card-section style="opacity: 0.9" class="bg-black">
+              <div class="text-overline textKdam text-white">co-founder.</div>
+              <div class="text-h5 text-white textKdam q-mt-sm q-mb-xs">Fernando</div>
+              <div class="text-caption textKdam bg-black text-grey">
+                <span class="text-italic" v-if="pt">Soneca</span> <span v-if="!pt">Aka Soneca</span> <br> <br> <span
+                  class="q-gutter-x-xs text-center"> </span>
+                <span v-if="pt">Streamer/Empresário</span> <span v-if="!pt">Streamer/Businessman</span> <br> <br> <span
+                  class="q-gutter-x-xs text-center">
+                  <q-icon size="xs" color="green" name="fa-solid fa-flag" /> <span
+                    class="text-bold text-subtitle2">BR</span>
+                </span>
               </div>
+            </q-card-section>
 
-              <q-card-section style="opacity: 0.9" class="bg-black">
-                <div class="text-overline textKdam text-white">co-founder.</div>
-                <div class="text-h5 text-white textKdam q-mt-sm q-mb-xs">Fernando</div>
-                <div class="text-caption textKdam bg-black text-grey">
-                  Streamer/Empresário <br> <br> <span class="q-gutter-x-xs text-center">
-                    <q-icon size="xs" color="green" name="fa-solid fa-flag" /> <span
-                      class="text-bold text-subtitle2">BR</span>
-                  </span>
-                </div>
-              </q-card-section>
+            <q-card-actions style="opacity: 0.8; border-radius: 0px 0px 4px 4px;" class="bg-black">
+              <q-btn class="textKdam text-caption" icon-right="fa-brands fa-twitter" flat color="dark"
+                text-color="white" />
 
-              <q-card-actions style="opacity: 0.8" class="bg-black">
-                <q-btn class="textKdam text-caption" icon-right="fa-brands fa-twitter" flat color="dark"
-                  text-color="white" />
+              <q-space />
+              <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded1 ? 'OK' : 'Sobre'"
+                color="white" rounded flat dense :icon="expanded1 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                @click="expanded1 = !expanded1" />
+              <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded1 ? 'OK' : 'About'"
+                color="white" rounded flat dense :icon="expanded1 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                @click="expanded1 = !expanded1" />
+            </q-card-actions>
 
-                <q-space />
-                <q-btn class="text-bold text-italic text-white" :label="expanded1 ? 'OK' : 'Sobre'" color="white"
-                  rounded flat dense :icon="expanded1 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                  @click="expanded1 = !expanded1" />
-              </q-card-actions>
-
-              <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
-                <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded1">
-                  <q-separator />
-                  <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
-                    class="text-subitle2 titleFont text-white bg-black">
+            <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
+              <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded1">
+                <q-separator />
+                <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
+                  class="text-subitle2 titleFont text-white bg-black">
+                  <div v-if="pt" class="flex flex-center">
                     <span clas="text-h5">"</span> Streamer Brasileiro, Nº1 em CryptoGames , atualmente tem parcerias no
                     ramo de casino, e direciona suas
                     lives para tais assuntos. <br>
                     <span style="text-decoration: underline;" class="text-italic"> Criador do AlphaC </span> <span
                       clas="text-h5"> "</span>
-                  </q-card-section>
-                </div>
-              </q-slide-transition>
-            </q-card>
-
-
-          </div>
-
-          <div class="col bg-dark flex flex-center">
-            <q-card style="top: -8em; border-radius: 25px;" class="my-card-xl q-mb-xl bg-transparent" flat bordered>
-              <div style="border-radius: 25px;" class="flex items-center justify-center">
-                <q-img style="border-radius: 25px 25px 0px 0px;" class="backgroundImage1-xl" />
+                  </div>
+                  <div v-if="!pt" class="flex flex-center">
+                    <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
+                    online casino
+                    <br>
+                    <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
+                      clas="text-h5"> "</span>
+                  </div>
+                </q-card-section>
               </div>
+            </q-slide-transition>
+          </q-card>
+        </div>
 
-              <q-card-section style="opacity: 0.9" class="bg-black">
-                <div class="text-overline textKdam text-white">co-founder.</div>
-                <div class="text-h5 text-white textKdam q-mt-sm q-mb-xs">Fernando</div>
-                <div class="text-caption textKdam bg-black text-grey">
-                  Streamer/Empresário <br> <br> <span class="q-gutter-x-xs text-center">
-                    <q-icon size="xs" color="green" name="fa-solid fa-flag" /> <span
-                      class="text-bold text-subtitle2">BR</span>
-                  </span>
-                </div>
-              </q-card-section>
+        </div>
+        <div style="width: 100vw; heigh: 14vh; margin-top: 15vh;" class="flex items-center justify-center flex-center text-center ">
+          <h2 class="text-bold mainFont text-white">
+            Team members <span class="blink">|</span>
+          </h2>
+        </div>
 
-              <q-card-actions style="opacity: 0.8" class="bg-black">
-                <q-btn class="textKdam text-caption" icon-right="fa-brands fa-twitter" flat color="dark"
-                  text-color="white" />
+      <div style="width: 100vw; padding-bottom: 40vh; margin-top: 30vh;"
+        class="container bg-dark flex q-mb-md row flex-center q-gutter-x-sm  justify-center">
+        <div class="col bg-dark flex flex-center">
+          <q-card style="top: -7em; border-radius: 25px;" class="my-card-xl q-mb-xl bg-transparent" flat bordered>
+            <div style="border-radius: 25px;" class="flex items-center justify-center">
+              <q-img style="border-radius: 25px 25px 0px 0px;" class="backgroundImage2-xl" />
+            </div>
 
-                <q-space />
-                <q-btn class="text-bold text-italic text-white" :label="expanded1 ? 'OK' : 'Sobre'" color="white"
-                  rounded flat dense :icon="expanded1 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                  @click="expanded1 = !expanded1" />
-              </q-card-actions>
+            <q-card-section style="opacity: 0.9" class="bg-black">
+              <div class="text-overline textKdam text-white">CTO.</div>
+              <div class="text-h5 text-white textKdam q-mt-sm q-mb-xs">Joey Diab</div>
+              <div class="text-caption textKdam bg-black text-grey">
+                <span class="text-italic" v-if="pt">gynchiii.sol</span> <span v-if="!pt">Aka gynchiii.sol</span> <br> <br> <span
+                  class="q-gutter-x-xs text-center"> </span>
+                <span class="text-bold" v-if="pt">Developer</span> <span v-if="!pt">Developer</span> <br> <br> <span
+                  class="q-gutter-x-xs text-center">
+                  <q-icon size="xs" color="green" name="fa-solid fa-flag" /> <span
+                    class="text-bold text-subtitle2">BR</span>
+                </span>
+              </div>
+            </q-card-section>
 
-              <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
-                <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded1">
-                  <q-separator />
-                  <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
-                    class="text-subitle2 titleFont text-white bg-black">
-                    <div v-if="pt" class="flex flex-center">
-                      <span clas="text-h5">"</span> Streamer Brasileiro, Nº1 em CryptoGames , atualmente tem parcerias
-                      no
-                      ramo de casino, e direciona suas
-                      lives para tais assuntos. <br>
-                      <span style="text-decoration: underline;" class="text-italic"> Criador do AlphaC </span> <span
-                        clas="text-h5"> "</span>
-                    </div>
-                    <div v-if="!pt" class="flex flex-center">
-                      <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
-                      online casino
-                      <br>
-                      <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
-                        clas="text-h5"> "</span>
-                    </div>
+            <q-card-actions style="opacity: 0.8; border-radius: 0px 0px 4px 4px;" class="bg-black">
+              <q-btn class="textKdam text-caption" icon-right="fa-brands fa-twitter" flat color="dark"
+                text-color="white" />
 
-                  </q-card-section>
-                </div>
-              </q-slide-transition>
-            </q-card>
+              <q-space />
+              <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded1 ? 'OK' : 'Sobre'"
+                color="white" rounded flat dense :icon="expanded1 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                @click="expanded1 = !expanded1" />
+              <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded1 ? 'OK' : 'About'"
+                color="white" rounded flat dense :icon="expanded1 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                @click="expanded1 = !expanded1" />
+            </q-card-actions>
 
+            <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
+              <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded1">
+                <q-separator />
+                <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
+                  class="text-subitle2 titleFont text-white bg-black">
+                  <div v-if="pt" class="flex flex-center">
+                    <span clas="text-h5">"</span> Streamer Brasileiro, Nº1 em CryptoGames , atualmente tem parcerias no
+                    ramo de casino, e direciona suas
+                    lives para tais assuntos. <br>
+                    <span style="text-decoration: underline;" class="text-italic"> Criador do AlphaC </span> <span
+                      clas="text-h5"> "</span>
+                  </div>
+                  <div v-if="!pt" class="flex flex-center">
+                    <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
+                    online casino
+                    <br>
+                    <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
+                      clas="text-h5"> "</span>
+                  </div>
+                </q-card-section>
+              </div>
+            </q-slide-transition>
+          </q-card>
+        </div>
+        <div class="col bg-dark flex flex-center">
+          <q-card style="top: -7em; border-radius: 25px;" class="my-card-xl q-mb-xl bg-transparent" flat bordered>
+            <div style="border-radius: 25px;" class="flex items-center justify-center">
+              <q-img style="border-radius: 25px 25px 0px 0px;" class="backgroundImage1-xl" />
+            </div>
 
-          </div>
+            <q-card-section style="opacity: 0.9" class="bg-black">
+              <div class="text-overline textKdam text-white">co-founder.</div>
+              <div class="text-h5 text-white textKdam q-mt-sm q-mb-xs">Fernando</div>
+              <div class="text-caption textKdam bg-black text-grey">
+                <span v-if="pt">Streamer/Empresário</span> <span v-if="!pt">Streamer/Businessman</span> <br> <br> <span
+                  class="q-gutter-x-xs text-center">
+                  <q-icon size="xs" color="green" name="fa-solid fa-flag" /> <span
+                    class="text-bold text-subtitle2">BR</span>
+                </span>
+              </div>
+            </q-card-section>
+
+            <q-card-actions style="opacity: 0.8; border-radius: 0px 0px 4px 4px;" class="bg-black">
+              <q-btn class="textKdam text-caption" icon-right="fa-brands fa-twitter" flat color="dark"
+                text-color="white" />
+
+              <q-space />
+              <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded1 ? 'OK' : 'Sobre'"
+                color="white" rounded flat dense :icon="expanded1 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                @click="expanded1 = !expanded1" />
+              <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded1 ? 'OK' : 'About'"
+                color="white" rounded flat dense :icon="expanded1 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                @click="expanded1 = !expanded1" />
+            </q-card-actions>
+
+            <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
+              <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded1">
+                <q-separator />
+                <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
+                  class="text-subitle2 titleFont text-white bg-black">
+                  <div v-if="pt" class="flex flex-center">
+                    <span clas="text-h5">"</span> Streamer Brasileiro, Nº1 em CryptoGames , atualmente tem parcerias no
+                    ramo de casino, e direciona suas
+                    lives para tais assuntos. <br>
+                    <span style="text-decoration: underline;" class="text-italic"> Criador do AlphaC </span> <span
+                      clas="text-h5"> "</span>
+                  </div>
+                  <div v-if="!pt" class="flex flex-center">
+                    <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
+                    online casino
+                    <br>
+                    <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
+                      clas="text-h5"> "</span>
+                  </div>
+                </q-card-section>
+              </div>
+            </q-slide-transition>
+          </q-card>
+        </div>
+
         </div>
       </div>
 
-
-    </div>
 
 
 
@@ -291,11 +322,10 @@ export default defineComponent({
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
 }
 
 .my-card-xl {
-  width: 22vw;
+  width: 25vw;
   height: 33vh;
 }
 
@@ -333,6 +363,24 @@ export default defineComponent({
   transition-duration: 1.3s;
   background-position: 0;
   background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1024794938711494666/unknown.png");
+}
+
+.backgroundImage2-xl {
+  width: 40vw;
+  height: 42vh;
+  background-size: cover;
+  transition-duration: 1.3s;
+  background-position: 0;
+  background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1027823649480257536/gynchiiibw.png");
+}
+
+.backgroundImage2-xl:hover {
+  width: 40vw;
+  height: 42vh;
+  background-size: cover;
+  transition-duration: 1.3s;
+  background-position: 0;
+  background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1027823057634594856/unknown.png");
 }
 
 .bgg-solana {
