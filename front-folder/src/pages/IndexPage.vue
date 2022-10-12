@@ -1,6 +1,7 @@
 <template>
   <q-page class="flex bg-dark flex-center">
-    <div style="height: 95vh; background: radial-gradient(circle, #0057FF 5%, #0057FF 1%)">
+    <div class="flex flex-center full-width full-height"
+      style="max-height: 100vh; background: radial-gradient(circle, #0057FF 5%, #0057FF 1%)">
       <q-toolbar class="absolute-top">
 
         <q-toolbar-title class="titleFont">
@@ -16,11 +17,11 @@
 
         <div class="text-dark flex flex-center q-gutter-x-md q-py-md q-pr-xl row">
           <q-btn-group outline>
-            <div style="border-radius: 5px;" class="flex q-ma-xs q-gutter-x-none bg-white">
+            <div style="border-radius: 5px;" class="flex shadow-8 q-ma-xs q-gutter-x-none bg-white">
               <q-btn @click="pt = false" rounded color="dark" flat style="opacity: 0.8;"
-                class="titleFont  text-dark text-bold" v-if="pt" label="EN" />
+                class="titleFont   text-dark text-bold" v-if="pt" label="EN" />
               <q-btn @click="pt = true" rounded color="dark" flat style="opacity: 0.8;"
-                class="titleFont text-dark text-bold" v-if="!pt" label="PT" />
+                class="titleFont  text-dark text-bold" v-if="!pt" label="PT" />
             </div>
             <q-btn color="dark" flat style="opacity: 0.8;" icon="fa-brands text-white fa-discord" />
             <q-btn color="dark" flat style="opacity: 0.8;" icon="fa-brands text-white fa-twitter" />
@@ -33,53 +34,93 @@
           <div style="border-radius: 15px;" class="bgg-dark shadow-8">
             <div style="margin-top: 5vh;" class="col text-end q-ml-md flex flex-center q-pa-lg">
               <div style="font-size: 9vh;" class="mainFont text-center text-bold flex flex-center ">
-                <span class="typewriter text-grey-4" v-if="pt"><span style="opacity: 0.78;" class="text-accent"><span
-                      style="opacity: 0.78;" class="text-primary">Block</span>chain</span> em doses diárias</span>
-                <span class="typewriter text-grey-4" v-if="!pt"><span style="opacity: 0.78;" class="text-accent"><span
-                      style="opacity: 0.78;" class="text-primary">Block</span>chain</span> in daily doses</span>
+                <span class="typewriter text-grey-4" v-if="(pt) && (!mintButton)"> Não se perca mais na
+                  <span style="opacity: 0.78;" class="text-accent">
+                    <span style="opacity: 0.78;" class="text-primary">
+                      Block
+                    </span>
+                    chain
+                  </span>
+                </span>
 
+                <span class="typewriter text-grey-4" v-if="(pt) && (mintButton)"> Vem <span
+                    class="text-accent">mintar</span> com a gente </span>
+
+                <span class="typewriter text-grey-4" v-if="!pt">
+                  <span style="opacity: 0.78;" class="text-accent">
+                    <span style="opacity: 0.78;" class="text-primary">
+                      Block
+                    </span>
+                    chain
+                  </span>
+                  in daily doses
+                </span>
               </div>
             </div>
             <div style="margin-top: 1vh;" class="col text-end q-ml-md flex flex-center q-pa-lg">
               <div style="font-size: 5vh;" class="mainFont text-italic flex flex-center text-grey-4">
-                <span data-show-after="1000" class="fadeIn" v-if="pt">você escolha a frequência</span>
+                <span data-show-after="1000" class="fadeIn" v-if="(pt) && (!mintButton)">Não Navegue mais
+                  sozinho!</span>
+                <span data-show-after="10000" class=" type2title text-bold" v-if="(pt) && (mintButton)">O que ta
+                  esperando? Bora!</span>
                 <span class="fadeIn" v-if="!pt">You choose the frequency</span>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
+    <q-spinner-puff v-if="(pageCounter === 0) && (mintButton === true)" thickness="2" size="305vh"
+      class="flex absolute-center animationMint flex-center" style="margin-top: 5vh; opacity: 0.32;" color="accent" />
     <div class="bg-dark" style="width: 100vw;" v-if="pageCounter == 1">
       <div style="width: 100vw; height: 100vh;" class="flex flex-center full-width full-height row">
         <div style="margin-top: -3vh;" class="col flex flex-center q-pa-lg">
-          <transition appear enter-active-class="animated backInDown" leave-active-class="animated backOutDown">
-            <div style="font-size: 6vh; text-align: end;" class="titleFont text-bold flex flex-center text-white">
+          <transition appear enter-active-class="animated backInDown">
+            <div v-if="slideCounter === 0" style="font-size: 6vh; text-align: end;" class="titleFont text-bold flex flex-center text-white">
               <span v-if="pt">
-                AlphaC não é só uma DAO, mas sim um conceito. Um lugar.
+                AlphaC não é só uma DAO, mas sim um conceito.
               </span>
               <span v-if="!pt">
                 AlphaC isn't just a DAO, but a concept. A place.
               </span>
             </div>
           </transition>
+          <div v-if="slideCounter != 0" style="font-size: 6vh; text-align: end; width: 90vw;" class=" text-bold flex flex-center text-white">
+              <span class="typewriter-2" v-if="pt">
+               O seu lugar.
+              </span>
+              <span v-if="!pt">
+                AlphaC isn't just a DAO, but a concept. A place.
+              </span>
+            </div>
         </div>
         <div class="col flex flex-center q-pa-md">
           <transition appear enter-active-class="animated fadeIn">
             <div style="font-size: 15vh;" class="titleFont solanaImage text-center flex flex-center text-accent">
-              <q-img style="width: 22vw; border-radius: 25px;"
+              <q-img v-if="slideCounter === 0" style="width: 22vw; border-radius: 25px;"
                 src="https://cdn.discordapp.com/attachments/459557016042471454/1022354189235519488/299085275_1297684320974924_880665858629312467_n.jpg">
+              </q-img>
+              <q-img v-if="slideCounter === 1" style="width: 22vw; border-radius: 25px;"
+                src="https://cdn.discordapp.com/attachments/459557016042471454/1029649613248024686/alphac1.png">
+              </q-img>
+              <q-img v-if="slideCounter === 2" style="width: 22vw; border-radius: 25px;"
+                src="https://cdn.discordapp.com/attachments/459557016042471454/1029649612916662342/alphacvari2.png">
               </q-img>
             </div>
           </transition>
         </div>
         <div style="margin-top: 30vh;" class="col flex flex-center q-pa-lg">
-          <transition appear enter-active-class="animated backInUp" leave-active-class="animated backOutUp">
-            <div style="font-size: 6vh;" class="titleFont text-bold flex flex-center text-white">
-              <span v-if="pt">Completo, remodelado, feito pela comunidade, para a comunidade.</span>
+          <transition appear enter-active-class="animated backInUp">
+            <div v-if="(slideCounter != 1)" style="font-size: 5.5vh;" class="titleFont text-bold flex flex-center text-white">
+              <span v-if="(pt)">Um clube, uma DAO, uma família. <br> <br> Um lugar.</span>
               <span v-if="!pt">Complete, rebuilded, made by community, to the community</span>
             </div>
           </transition>
+          <div v-if="(slideCounter === 2)" style="font-size: 5.5vh; width: 90vw;" class=" text-bold flex flex-center text-white">
+              <span class="fadeIn" v-if="(pt)">Oportunidades infinitas <br> te esperam na Web3</span>
+              <span v-if="!pt">Complete, rebuilded, made by community, to the community</span>
+            </div>
         </div>
 
       </div>
@@ -106,7 +147,7 @@
                 target="" to="/aboutproject" class="underlined underlined--reverse">
                 <q-tooltip style="width: 14vw; height: 13vh;">
                   <q-img style="width: 100%; height: 100%;"
-                    src="https://cdn.discordapp.com/attachments/459557016042471454/1028440057780129792/unknown.png">
+                    src="https://cdn.discordapp.com/attachments/459557016042471454/1029663637981376572/unknown.png">
 
                   </q-img>
                 </q-tooltip>
@@ -117,19 +158,45 @@
 
 
       </div>
+
     </div>
-    <div v-if="pageCounter != 2" style="width: 100vw; height: 100vh; margin-top: vh; opacity: 0.9;"
-      class="flex bg-dark flex-center full-width full-height items-center">
-      <div style="width: 100vw;" class="flex flex-center row q-pa-lg">
-        <q-btn @click="(pageCounter +++ 1)" style="width: 100vw; height: 5vh;"
-          class="titleFont  absolute-bottom flex flex-center row q-gutter-x-sm q-pa-md">
-          <span v-if="pt" style="text-decoration: underline;" class=" text-primary spanText col">Continuar</span>
-          <span v-if="!pt" style="text-decoration: underline;" class=" text-primary spanText col">Continue</span>
+
+
+    <div v-if="(pageCounter === 0) && (pageCounter != 2)" style="width: 50vw; margin-top: -18vh;"
+      class="flex flex-center items-center justify-center q-pa-lg">
+      <q-btn v-on:mouseleave="mintButton = false" v-on:mouseover="mintButton = true" @click="(pageCounter +++ 1)"
+        style="width: 15vw; border-radius: 8px; height: 9vh; background: radial-gradient(circle, #8A3BD8 55%, #6CEAFF 165%)"
+        class="titleFont  flex flex-center shadow-11 row q-gutter-x-sm q-pa-md">
+        <span v-if="pt && !mintButton" style="text-decoration: ;" class=" text-secondary spanText col">Continuar</span>
+        <span v-if="pt && mintButton" style="text-decoration: ;" class=" text-secondary spanText col">Mint</span>
+        <span v-if="!pt && !mintButton" style="text-decoration: ;" class=" text-secondary spanText col">Continue</span>
+        <span v-if="!pt && mintButton" style="text-decoration: ;" class=" text-secondary spanText col">Mint</span>
+        <q-icon class="text-white" size="xs" name="arrow_right"></q-icon>
+      </q-btn>
+    </div>
+
+    <transition appear class="transition-3"  enter-active-class="animated fadeInRight">
+      <div v-if="(pageCounter === 1) && (pageCounter != 2)"
+        style="width: 50vw; margin-top: -18vh; margin-left: -15vw;" class="flex items-start justify-start q-pa-lg">
+        <q-btn v-if="slideCounter === 0" @click="(slideCounter +++ 1)"
+          style="width: 12vw; border-radius: 8px; height: 9vh; background: radial-gradient(circle, #0057FF 75%, #FFFFFF 165%)"
+          class="titleFont  flex flex-center shadow-11 row q-gutter-x-sm q-pa-md">
+          <span v-if="pt " style="text-decoration: ;" class=" text-white spanText col">Seguinte</span>
+          <span v-if="!pt " style="text-decoration: ;" class=" text-white spanText col">Seguinte</span>
+          <span v-if="!pt" style="text-decoration: ;" class=" text-white spanText col">Mint</span>
+          <q-icon class="text-white" size="xs" name="arrow_right"></q-icon>
+        </q-btn>
+        <q-btn v-if="slideCounter === 1" @click="(pageCounter +++ 1)"
+          style="width: 12vw; border-radius: 8px; height: 9vh; background: radial-gradient(circle, #5A6AFF 75%, #FFFFFF 165%)"
+          class="titleFont  flex flex-center shadow-11 row q-gutter-x-sm q-pa-md">
+          <span v-if="pt " style="text-decoration: ;" class=" text-white spanText col">Seguinte</span>
+          <span v-if="!pt " style="text-decoration: ;" class=" text-white spanText col">Seguinte</span>
+          <span v-if="!pt" style="text-decoration: ;" class=" text-white spanText col">Mint</span>
           <q-icon class="text-white" size="xs" name="arrow_right"></q-icon>
         </q-btn>
       </div>
+    </transition>
 
-    </div>
 
 
 
@@ -144,8 +211,10 @@ export default defineComponent({
   data() {
     return {
       pageCounter: ref(0),
+      slideCounter: ref(0),
       pageCounter2: ref(0),
-      pt: true
+      pt: true,
+      mintButton: false
     }
   }
 })
@@ -170,11 +239,24 @@ export default defineComponent({
   background-size: cover;
 }
 
+.bgg-solana2 {
+  background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1029628478380851281/bgwhib.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .transition-1 {
   animation-delay: 1s;
   transition-duration: 1;
 }
 
+
+.animationMint {
+  transition-delay: 1s;
+  animation-delay: 1s;
+  animation-duration: 2s;
+}
 
 .bgg-dark {
   background-color: rgba(51, 49, 56, 0.18);
@@ -198,6 +280,8 @@ export default defineComponent({
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+
 
 .fadeIn {
   transition-duration: 6s;
@@ -321,8 +405,9 @@ h2 {
 .typewriter {
   color: #fff;
   overflow: hidden;
+  text-align: center;;
   /* Ensures the content is not revealed until the animation */
-  border-right: .11em solid orange;
+  border-right: .11em solid rgb(125, 64, 153, 0.5);
   /* The typwriter cursor */
   white-space: nowrap;
   /* Keeps the content on a single line */
@@ -333,6 +418,38 @@ h2 {
   animation:
     typing 1.34s steps(30, end),
     blink-caret .5s step-end infinite;
+}
+
+.typewriter-2 {
+  color: #fff;
+  overflow: hidden;
+  text-align: center;;
+  /* Ensures the content is not revealed until the animation */
+  /* The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  margin: 0 auto;
+  /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .06em;
+  /* Adjust as needed */
+  animation:
+    typing 1.34s steps(30, end),
+}
+
+.typewriter-3 {
+  color: #fff;
+  overflow: hidden;
+  text-align: end;;
+  /* Ensures the content is not revealed until the animation */
+  /* The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  margin: 0 auto;
+  /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .06em;
+  /* Adjust as needed */
+  animation:
+    typing 1.34s steps(30, end),
 }
 
 /* The typing effect */
@@ -355,7 +472,7 @@ h2 {
   }
 
   50% {
-    border-color: orange
+    border-color: rgb(151, 80, 202, 0.4)
   }
 }
 </style>
