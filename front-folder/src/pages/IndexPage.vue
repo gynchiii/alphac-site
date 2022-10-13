@@ -82,28 +82,23 @@
                 AlphaC não é só um grupo, mas sim um conceito.
               </span>
               <span v-if="!pt">
-                AlphaC isn't just a DAO, but a concept. A place.
+                <!-- AlphaC isn't just a DAO, but a concept. A place. -->
               </span>
             </div>
           </transition>
-          <div v-if="slideCounter != 0" style="font-size: 6vh; text-align: end; width: 90vw;" class=" text-bold flex flex-center text-white">
-          <transition appear enter-active-class="animated backInLeft">
+          <transition appear enter-active-class="animated fadeIn">
+          <div v-if="slideCounter != 0" style="font-size: 6vh; text-align: end; width: 100vw;" class=" text-bold justify-center items-center flex flex-center text-white">
             <span class="typewriter-2" v-if="pt">
                O seu lugar.
               </span>
-              </transition>
-          <transition appear enter-active-class="animated backInLeft">
-              <span  class="typewriter-2" v-if="!pt">
-               Your Place
-              </span>
-              </transition>
               <span v-if="!pt">
                 AlphaC isn't just a DAO, but a concept. A place.
               </span>
             </div>
+          </transition>
         </div>
-        <div class="col flex flex-center q-pa-md">
-          <transition appear leave-active-class="animated backOutRight" enter-active-class="animated fadeIn">
+        <div v-if="slideCounter === 0" class="col flex flex-center q-pa-md">
+          <transition appear leave-active-class="animated fadeOut" enter-active-class="animated fadeIn">
             <div  v-if="slideCounter === 0" style="font-size: 15vh;" class="titleFont solanaImage text-center flex flex-center text-accent">
               <q-img style="width: 22vw; border-radius: 25px;"
                 src="https://cdn.discordapp.com/attachments/459557016042471454/1022354189235519488/299085275_1297684320974924_880665858629312467_n.jpg">
@@ -280,13 +275,6 @@ export default defineComponent({
   background-position: 0;
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-
-
-.fadeIn {
-  transition-duration: 6s;
-  animation-duration: 6s;
 }
 
 .backInDown {

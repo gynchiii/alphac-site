@@ -112,7 +112,8 @@ module.exports = configure(function (ctx) {
       "fadeOut",
       "backInRight",
       "backInLeft",
-      "fadeInRight"
+      "fadeInRight",
+      "bounceInLeft"
     ],
 
     // https://v2.quasar.dev/quasar-cli-webpack/developing-ssr/configuring-ssr
