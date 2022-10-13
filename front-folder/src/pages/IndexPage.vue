@@ -79,7 +79,7 @@
           <transition appear enter-active-class="animated backInDown">
             <div v-if="slideCounter === 0" style="font-size: 6vh; text-align: end;" class="titleFont text-bold flex flex-center text-white">
               <span v-if="pt">
-                AlphaC não é só uma DAO, mas sim um conceito.
+                AlphaC não é só um grupo, mas sim um conceito.
               </span>
               <span v-if="!pt">
                 AlphaC isn't just a DAO, but a concept. A place.
@@ -87,25 +87,26 @@
             </div>
           </transition>
           <div v-if="slideCounter != 0" style="font-size: 6vh; text-align: end; width: 90vw;" class=" text-bold flex flex-center text-white">
-              <span class="typewriter-2" v-if="pt">
+          <transition appear enter-active-class="animated backInLeft">
+            <span class="typewriter-2" v-if="pt">
                O seu lugar.
               </span>
+              </transition>
+          <transition appear enter-active-class="animated backInLeft">
+              <span  class="typewriter-2" v-if="!pt">
+               Your Place
+              </span>
+              </transition>
               <span v-if="!pt">
                 AlphaC isn't just a DAO, but a concept. A place.
               </span>
             </div>
         </div>
         <div class="col flex flex-center q-pa-md">
-          <transition appear enter-active-class="animated fadeIn">
-            <div style="font-size: 15vh;" class="titleFont solanaImage text-center flex flex-center text-accent">
-              <q-img v-if="slideCounter === 0" style="width: 22vw; border-radius: 25px;"
+          <transition appear leave-active-class="animated backOutRight" enter-active-class="animated fadeIn">
+            <div  v-if="slideCounter === 0" style="font-size: 15vh;" class="titleFont solanaImage text-center flex flex-center text-accent">
+              <q-img style="width: 22vw; border-radius: 25px;"
                 src="https://cdn.discordapp.com/attachments/459557016042471454/1022354189235519488/299085275_1297684320974924_880665858629312467_n.jpg">
-              </q-img>
-              <q-img v-if="slideCounter === 1" style="width: 22vw; border-radius: 25px;"
-                src="https://cdn.discordapp.com/attachments/459557016042471454/1029649613248024686/alphac1.png">
-              </q-img>
-              <q-img v-if="slideCounter === 2" style="width: 22vw; border-radius: 25px;"
-                src="https://cdn.discordapp.com/attachments/459557016042471454/1029649612916662342/alphacvari2.png">
               </q-img>
             </div>
           </transition>
@@ -312,7 +313,6 @@ export default defineComponent({
 }
 
 .solanaImage {
-  transition-delay: 6s;
   transform: translatey(0px);
   animation: float 3s ease-in-out infinite;
 }

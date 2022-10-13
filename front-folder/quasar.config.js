@@ -106,11 +106,12 @@ module.exports = configure(function (ctx) {
     animations: [
       "backInDown",
       "backInUp",
-      "backOutDown",
+      "backOutRight",
       "backOutUp",
       "fadeIn",
       "fadeOut",
       "backInRight",
+      "backInLeft",
       "fadeInRight"
     ],
 
