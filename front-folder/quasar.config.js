@@ -106,12 +106,15 @@ module.exports = configure(function (ctx) {
     animations: [
       "backInDown",
       "backInUp",
-      "backOutDown",
+      "backOutRight",
       "backOutUp",
       "fadeIn",
       "fadeOut",
       "backInRight",
-      "fadeInRight"
+      "backInLeft",
+      "fadeInRight",
+      "fadeInLeft",
+      "bounceInLeft"
     ],
 
     // https://v2.quasar.dev/quasar-cli-webpack/developing-ssr/configuring-ssr
