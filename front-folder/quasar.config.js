@@ -113,6 +113,7 @@ module.exports = configure(function (ctx) {
       "backInRight",
       "backInLeft",
       "fadeInRight",
+      "fadeInLeft",
       "bounceInLeft"
     ],
 

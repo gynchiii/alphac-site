@@ -1,7 +1,7 @@
 <template>
   <q-page class="flex bg-dark flex-center">
     <div class="flex flex-center full-width full-height"
-      style="max-height: 100vh; background: radial-gradient(circle, #0057FF 5%, #0057FF 1%)">
+    style="max-height: 100vh; background: radial-gradient(circle, #0057FF 5%, #0057FF 1%)">
       <q-toolbar class="absolute-top">
 
         <q-toolbar-title class="titleFont">
@@ -16,11 +16,15 @@
         </q-toolbar-title>
 
         <div class="text-dark flex flex-center q-gutter-x-md q-py-md q-pr-xl row">
-          <q-btn-group outline>
-            <div style="border-radius: 5px;" class="flex shadow-8 q-ma-xs q-gutter-x-none bg-white">
-              <q-btn @click="pt = false" rounded color="dark" flat style="opacity: 0.8;"
+          <q-btn-group class="q-gutter-x-sm" outline>
+            <div class="flex q-ma-xs q-gutter-x-none">
+              <q-btn @click="pageCounter = 4" color="dark" dense style="opacity: 0.8;"
+                class="titleFont bg-transparent text-dark text-bold" icon="menu" />
+            </div>
+            <div style="border-radius: 5px; background-color: rgb(255, 255, 255, 0.88);" class="flex shadow-4 q-ma-xs q-gutter-x-none">
+              <q-btn @click="pt = false" color="dark" flat style="opacity: 0.8;"
                 class="titleFont   text-dark text-bold" v-if="pt" label="EN" />
-              <q-btn @click="pt = true" rounded color="dark" flat style="opacity: 0.8;"
+              <q-btn @click="pt = true" color="dark" flat style="opacity: 0.8;"
                 class="titleFont  text-dark text-bold" v-if="!pt" label="PT" />
             </div>
             <q-btn color="dark" flat style="opacity: 0.8;" icon="fa-brands text-white fa-discord" />
@@ -71,8 +75,6 @@
         </div>
       </div>
     </div>
-    <q-spinner-puff v-if="(pageCounter === 0) && (mintButton === true)" thickness="2" size="305vh"
-      class="flex absolute-center animationMint flex-center" style="margin-top: 5vh; opacity: 0.32;" color="accent" />
     <div class="bg-dark" style="width: 100vw;" v-if="pageCounter == 1">
       <div style="width: 100vw; height: 100vh;" class="flex flex-center full-width full-height row">
         <div style="margin-top: -3vh;" class="col flex flex-center q-pa-lg">
@@ -83,16 +85,6 @@
               </span>
               <span v-if="!pt">
                 <!-- AlphaC isn't just a DAO, but a concept. A place. -->
-              </span>
-            </div>
-          </transition>
-          <transition appear enter-active-class="animated fadeIn">
-          <div v-if="slideCounter != 0" style="font-size: 6vh; text-align: end; width: 100vw;" class=" text-bold justify-center items-center flex flex-center text-white">
-            <span class="typewriter-2" v-if="pt">
-               O seu lugar.
-              </span>
-              <span v-if="!pt">
-                AlphaC isn't just a DAO, but a concept. A place.
               </span>
             </div>
           </transition>
@@ -121,10 +113,10 @@
 
       </div>
     </div>
-    <div class="bg-dark" style="width: 100vw;" v-if="pageCounter == 2">
+    <div class="bg-dark flex flex-center" style="width: 100vw;" v-if="pageCounter == 2">
       <div style="width: 100vw; height: 100vh;" class="flex flex-center full-width full-height row">
         <div class="wrap q-gutter-y-md bg-dark">
-          <transition appear class="transition-1" enter-active-class="animated  backInUp"
+          <transition appear class="transition-11" enter-active-class="animated  backInUp"
             leave-active-class="animated backInDown">
             <p><a @mouseover="aboutTeamBg = true" @mouseleave="aboutTeamBg = false" href="/#/aboutteam" target=""
                 to="/aboutteam" class="underlined underlined--reverse">
@@ -137,7 +129,7 @@
                 Sobre o Time
               </a></p>
           </transition>
-          <transition appear class="transition-2" enter-active-class="animated backInUp"
+          <transition appear class="transition-22" enter-active-class="animated backInUp"
             leave-active-class="animated backInDown">
             <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false" href="/#/aboutproject"
                 target="" to="/aboutproject" class="underlined underlined--reverse">
@@ -148,6 +140,68 @@
                   </q-img>
                 </q-tooltip>
                 Sobre o Projeto
+              </a></p>
+          </transition>
+        </div>
+
+
+      </div>
+
+    </div>
+
+    <div class="flex flex-center" style="width: 100vw;" v-if="pageCounter == 4">
+      <div style="width: 100vw; height: 100vh;" class="flex flex-center full-width full-height row">
+        <div class="wrap q-gutter-y-md">
+          <transition appear class="transition-1" enter-active-class="animated  backInUp"
+            leave-active-class="animated backInDown">
+            <p><a @mouseover="aboutTeamBg = true" @mouseleave="aboutTeamBg = false" href="/#/aboutteam" target=""
+                to="/aboutteam" class="underlined underlined--reverse">
+                <q-tooltip style="width: 14vw; height: 13vh;">
+                  <q-img style="width: 100%; height: 100%;"
+                    src="https://cdn.discordapp.com/attachments/459557016042471454/1028440057780129792/unknown.png">
+
+                  </q-img>
+                </q-tooltip>
+                Como Fazer Parte
+              </a></p>
+          </transition>
+          <transition appear class="transition-2" enter-active-class="animated  backInUp"
+            leave-active-class="animated backInDown">
+            <p><a @mouseover="aboutTeamBg = true" @mouseleave="aboutTeamBg = false" href="/#/aboutteam" target=""
+                to="/aboutteam" class="underlined underlined--reverse">
+                <q-tooltip style="width: 14vw; height: 13vh;">
+                  <q-img style="width: 100%; height: 100%;"
+                    src="https://cdn.discordapp.com/attachments/459557016042471454/1028440057780129792/unknown.png">
+
+                  </q-img>
+                </q-tooltip>
+                Sobre o Time
+              </a></p>
+          </transition>
+          <transition appear class="transition-3" enter-active-class="animated backInUp"
+            leave-active-class="animated backInDown">
+            <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false" href="/#/aboutproject"
+                target="" to="/aboutproject" class="underlined underlined--reverse">
+                <q-tooltip style="width: 14vw; height: 13vh;">
+                  <q-img style="width: 100%; height: 100%;"
+                    src="https://cdn.discordapp.com/attachments/459557016042471454/1029663637981376572/unknown.png">
+
+                  </q-img>
+                </q-tooltip>
+                Sobre o Projeto
+              </a></p>
+          </transition>
+          <transition appear class="transition-4" enter-active-class="animated backInUp"
+            leave-active-class="animated backInDown">
+            <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false" href="/#/aboutproject"
+                target="" to="/aboutproject" class="underlined underlined--reverse">
+                <q-tooltip style="width: 14vw; height: 13vh;">
+                  <q-img style="width: 100%; height: 100%;"
+                    src="https://cdn.discordapp.com/attachments/459557016042471454/1029663637981376572/unknown.png">
+
+                  </q-img>
+                </q-tooltip>
+                Guia Iniciante
               </a></p>
           </transition>
         </div>
@@ -171,18 +225,10 @@
       </q-btn>
     </div>
 
-    <transition appear class="transition-3"  enter-active-class="animated fadeInRight">
+    <transition appear class="transition-33"  enter-active-class="animated fadeInRight">
       <div v-if="(pageCounter === 1) && (pageCounter != 2)"
         style="width: 50vw; margin-top: -18vh; margin-left: -15vw;" class="flex items-start justify-start q-pa-lg">
-        <q-btn v-if="slideCounter === 0" @click="(slideCounter +++ 1)"
-          style="width: 12vw; border-radius: 8px; height: 9vh; background: radial-gradient(circle, #0057FF 75%, #FFFFFF 165%)"
-          class="titleFont  flex flex-center shadow-11 row q-gutter-x-sm q-pa-md">
-          <span v-if="pt " style="text-decoration: ;" class=" text-white spanText col">Seguinte</span>
-          <span v-if="!pt " style="text-decoration: ;" class=" text-white spanText col">Seguinte</span>
-          <span v-if="!pt" style="text-decoration: ;" class=" text-white spanText col">Mint</span>
-          <q-icon class="text-white" size="xs" name="arrow_right"></q-icon>
-        </q-btn>
-        <q-btn v-if="slideCounter === 1" @click="(pageCounter +++ 1)"
+        <q-btn v-if="slideCounter === 0" @click="(pageCounter +++ 1)"
           style="width: 12vw; border-radius: 8px; height: 9vh; background: radial-gradient(circle, #5A6AFF 75%, #FFFFFF 165%)"
           class="titleFont  flex flex-center shadow-11 row q-gutter-x-sm q-pa-md">
           <span v-if="pt " style="text-decoration: ;" class=" text-white spanText col">Seguinte</span>
@@ -201,6 +247,7 @@
 
 <script>
 import { defineComponent, ref } from 'vue'
+
 
 export default defineComponent({
   name: 'IndexPage',
@@ -229,7 +276,7 @@ export default defineComponent({
 }
 
 .bgg-solana {
-  background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1022733258749915146/Untitled-video-Made-with-Clipchamp.gif");
+  background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1030317230556201050/solanabgg2.gif");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -242,9 +289,25 @@ export default defineComponent({
   background-size: cover;
 }
 
-.transition-1 {
+.transition-11 {
   animation-delay: 1s;
   transition-duration: 1;
+}
+
+
+.transition-1 {
+  animation-delay: 1.6s;
+  transition-duration: 1.6;
+}
+
+.transition-2 {
+  animation-delay: 1s;
+  transition-duration: 1;
+}
+
+.transition-3 {
+  animation-delay: 0.7s;
+  transition-duration: 0.7;
 }
 
 
@@ -254,8 +317,9 @@ export default defineComponent({
   animation-duration: 2s;
 }
 
+
 .bgg-dark {
-  background-color: rgba(51, 49, 56, 0.18);
+  background-color: rgba(51, 49, 56, 0.65);
 }
 
 .spilineFont {
