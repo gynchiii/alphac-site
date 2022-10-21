@@ -333,8 +333,8 @@
                     <span class="text-italic" v-if="pt">shmervz</span> <span v-if="!pt">Aka shmervz</span>
                     <br>
                     <br> <span class="q-gutter-x-xs text-center"> </span>
-                    <span class="text-bold" v-if="pt">Community Manager</span> <span v-if="!pt">Community Manager</span> <br> <br> <span
-                      class="q-gutter-x-xs text-center">
+                    <span class="text-bold" v-if="pt">Community Manager</span> <span v-if="!pt">Community Manager</span>
+                    <br> <br> <span class="q-gutter-x-xs text-center">
                       <q-icon size="xs" color="green" name="fa-solid fa-flag" /> <span
                         class="text-bold text-subtitle2">BR</span>
                     </span>
@@ -393,8 +393,8 @@
                     <span class="text-italic" v-if="pt">BloodKing</span> <span v-if="!pt">Aka BloodKing</span>
                     <br>
                     <br> <span class="q-gutter-x-xs text-center"> </span>
-                    <span class="text-bold" v-if="pt">Collab Manager</span> <span v-if="!pt">Collab Manager</span> <br> <br> <span
-                      class="q-gutter-x-xs text-center">
+                    <span class="text-bold" v-if="pt">Collab Manager</span> <span v-if="!pt">Collab Manager</span> <br>
+                    <br> <span class="q-gutter-x-xs text-center">
                       <q-icon size="xs" color="green" name="fa-solid fa-flag" /> <span
                         class="text-bold text-subtitle2">BR</span>
                     </span>
@@ -440,6 +440,321 @@
               </q-card>
             </q-intersection>
           </div>
+
+
+
+
+        </div>
+
+
+        <div style="width: 100vw; padding-bottom: 40vh; margin-top: 30vh;"
+          class="container flex q-mb-md row flex-center q-gutter-x-sm  justify-center">
+          <div class="col  flex flex-center">
+            <q-intersection transition="slide-right" transition-duration="800" once class="example-item">
+              <q-card style="top: -7em; border-radius: 25px;" class="my-card-xl q-mb-xl bg-transparent" flat bordered>
+                <div style="border-radius: 25px;" class="flex items-center justify-center">
+                  <q-img style="border-radius: 25px 25px 0px 0px;" v-on:mouseenter="cardHover = true"
+                    v-on:mouseleave="cardHover = false" class="backgroundImage6-xl" />
+                </div>
+
+                <q-card-section style="opacity: 0.9" class="bg-black">
+                  <div class="text-overline textKdam text-white">Discord Manager.</div>
+                  <div class="text-h5 text-white textKdam q-mt-sm q-mb-xs">Felipe Hitoki</div>
+                  <div class="text-caption textKdam bg-black text-grey">
+                    <span class="text-italic" v-if="pt">Hitoki</span> <span v-if="!pt">Aka hitoki</span>
+                    <br>
+                    <br> <span class="q-gutter-x-xs text-center"> </span>
+                    <span class="text-bold" v-if="pt">Discord Manager</span> <span v-if="!pt">Discord Manager</span>
+                    <br> <br> <span class="q-gutter-x-xs text-center">
+                      <q-icon size="xs" color="green" name="fa-solid fa-flag" /> <span
+                        class="text-bold text-subtitle2">BR</span>
+                    </span>
+                  </div>
+                </q-card-section>
+
+                <q-card-actions style="opacity: 0.8; border-radius: 0px 0px 4px 4px;" class="bg-black">
+                  <q-btn class="textKdam text-caption" icon-right="fa-brands fa-twitter" flat color="dark"
+                    text-color="white" />
+
+                  <q-space />
+                  <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded3 ? 'OK' : 'Sobre'"
+                    color="white" rounded flat dense :icon="expanded3 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                    @click="expanded3 = !expanded3" />
+                  <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded3 ? 'OK' : 'About'"
+                    color="white" rounded flat dense :icon="expanded3 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                    @click="expanded3 = !expanded3" />
+                </q-card-actions>
+
+                <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
+                  <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded3">
+                    <q-separator />
+                    <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
+                      class="text-subitle2 titleFont text-white bg-black">
+                      <div v-if="pt" class="flex flex-center">
+                        <span clas="text-h5">"</span> Desenvolvedor Web3 , 5+ anos de exp na área de programação, 7+
+                        anos
+                        de experiência profissional na área técnica
+                        <span style="text-decoration: underline;" class="text-italic q-pt-sm"> Atual CTO </span> <span
+                          clas="text-h5"> "</span>
+                      </div>
+                      <div v-if="!pt" class="flex flex-center">
+                        <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
+                        online casino
+                        <br>
+                        <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
+                          clas="text-h5"> "</span>
+                      </div>
+                    </q-card-section>
+                  </div>
+                </q-slide-transition>
+              </q-card>
+            </q-intersection>
+          </div>
+          <div class="col flex flex-center">
+            <q-intersection transition="slide-left" transition-duration="800" once class="example-item">
+              <q-card style="top: -7em; border-radius: 25px;" class="my-card-xl q-mb-xl bg-transparent" flat bordered>
+                <div style="border-radius: 25px;" class="flex items-center justify-center">
+                  <q-img style="border-radius: 25px 25px 0px 0px;" class="backgroundImage8-xl" />
+                </div>
+
+                <q-card-section style="opacity: 0.9" class="bg-black">
+                  <div class="text-overline textKdam text-white">Deep Diver</div>
+                  <div class="text-h5 text-white textKdam q-mt-sm q-mb-xs">Legolas</div>
+                  <div class="text-caption textKdam bg-black text-grey">
+                    <span class="text-italic" v-if="pt">Legolas</span> <span v-if="!pt">Aka Legolas</span>
+                    <br>
+                    <br> <span class="q-gutter-x-xs text-center"> </span>
+                    <span class="text-bold" v-if="pt">Deep Diver</span> <span v-if="!pt">Deep Diver</span> <br>
+                    <br> <span class="q-gutter-x-xs text-center">
+                      <q-icon size="xs" color="green" name="fa-solid fa-flag" /> <span
+                        class="text-bold text-subtitle2">BR</span>
+                    </span>
+                  </div>
+                </q-card-section>
+
+                <q-card-actions style="opacity: 0.8; border-radius: 0px 0px 4px 4px;" class="bg-black">
+                  <q-btn class="textKdam text-caption" icon-right="fa-brands fa-twitter" flat color="dark"
+                    text-color="white" />
+
+                  <q-space />
+                  <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded4 ? 'OK' : 'Sobre'"
+                    color="white" rounded flat dense :icon="expanded4 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                    @click="expanded4 = !expanded4" />
+                  <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded4 ? 'OK' : 'About'"
+                    color="white" rounded flat dense :icon="expanded4 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                    @click="expanded4 = !expanded4" />
+                </q-card-actions>
+
+                <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
+                  <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded4">
+                    <q-separator />
+                    <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
+                      class="text-subitle2 titleFont text-white bg-black">
+                      <div v-if="pt" class="flex flex-center">
+                        <span clas="text-h5">"</span> Streamer Brasileiro, Nº1 em CryptoGames , atualmente tem parcerias
+                        no
+                        ramo de casino, e direciona suas
+                        lives para tais assuntos. <br>
+                        <span style="text-decoration: underline;" class="text-italic"> Criador do AlphaC </span> <span
+                          clas="text-h5"> "</span>
+                      </div>
+                      <div v-if="!pt" class="flex flex-center">
+                        <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
+                        online casino
+                        <br>
+                        <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
+                          clas="text-h5"> "</span>
+                      </div>
+                    </q-card-section>
+                  </div>
+                </q-slide-transition>
+              </q-card>
+            </q-intersection>
+          </div>
+
+
+
+
+        </div>
+
+        <q-intersection transition="slide-right" transition-duration="900" once class="example-item">
+          <div style="width: 100vw; heigh: 14vh; margin-top: 17vh;"
+            class="flex items-center justify-center flex-center text-center ">
+            <h2 class="text-bold mainFont text-white">
+              Moderators <span class="blink">|</span>
+            </h2>
+          </div>
+        </q-intersection>
+
+        <div style="width: 100vw; padding-bottom: 50vh; margin-top: 35vh;"
+          class="container flex q-mb-md row flex-center q-gutter-x-xs items-center  justify-center">
+          <div class="col  flex flex-center">
+            <q-intersection transition="slide-right" transition-duration="3500" once class="example-item">
+              <q-card style="top: -7em; border-radius: 25px;" class="my-card-mod q-mb-xl bg-transparent" flat bordered>
+                <div style="border-radius: 25px;" class="flex items-center justify-center">
+                  <q-img style="border-radius: 200px;" v-on:mouseenter="cardHover = true"
+                    v-on:mouseleave="cardHover = false" class="backgroundImage7-xl" />
+                </div>
+
+                <q-card-section style="opacity: 0.9; border-radius: 25px;" class="bg-grey-10 q-mt-lg">
+                  <div class="text-h5 text-white textKdam q-mt-sm q-mb-xs">Radu</div>
+                  <div class="text-caption textKdam bg-grey-10 text-grey">
+                    <span class="text-italic" v-if="pt">Radu</span> <span v-if="!pt">Aka radu</span>
+                    <br>
+                    <br> <span class="q-gutter-x-xs text-center"> </span>
+                    <span class="text-bold" v-if="pt">Group Moderator</span> <span v-if="!pt">Discord Manager</span>
+                    <br> <br> <span class="q-gutter-x-xs text-center">
+                      <q-icon size="xs" color="green" name="fa-solid fa-flag" /> <span
+                        class="text-bold text-subtitle2">BR</span>
+                    </span>
+                  </div>
+                </q-card-section>
+              </q-card>
+            </q-intersection>
+          </div>
+          <div class="col flex flex-center">
+            <q-intersection transition="slide-right" transition-duration="2400" once class="example-item">
+              <q-card style="top: -7em; border-radius: 25px;" class="my-card-mod q-mb-xl bg-transparent" flat bordered>
+                <div style="border-radius: 25px;" class="flex items-center justify-center">
+                  <q-img style="border-radius: 200px;" v-on:mouseenter="cardHover = true"
+                    v-on:mouseleave="cardHover = false" class="backgroundImage9-xl" />
+                </div>
+
+                <q-card-section style="opacity: 0.9; border-radius: 25px;" class="bg-grey-10 q-mt-lg">
+                  <div class="text-h5 text-white textKdam q-mt-sm q-mb-xs">Eduardo Issa</div>
+                  <div class="text-caption textKdam bg-grey-10 text-grey">
+                    <span class="text-italic" v-if="pt">issa</span> <span v-if="!pt">Aka issa</span>
+                    <br>
+                    <br> <span class="q-gutter-x-xs text-center"> </span>
+                    <span class="text-bold" v-if="pt">Admin Moderator</span> <span v-if="!pt">Admin Moderator</span>
+                    <br> <br> <span class="q-gutter-x-xs text-center">
+                      <q-icon size="xs" color="green" name="fa-solid fa-flag" /> <span
+                        class="text-bold text-subtitle2">BR</span>
+                    </span>
+                  </div>
+                </q-card-section>
+              </q-card>
+            </q-intersection>
+          </div>
+
+          <div class="col flex flex-center">
+            <q-intersection transition="slide-right" transition-duration="800" once class="example-item">
+              <q-card style="top: -7em; border-radius: 25px;" class="my-card-mod q-mb-xl bg-transparent" flat bordered>
+                <div style="border-radius: 25px;" class="flex items-center justify-center">
+                  <q-img style="border-radius: 200px;" v-on:mouseenter="cardHover = true"
+                    v-on:mouseleave="cardHover = false" class="backgroundImage10-xl" />
+                </div>
+
+                <q-card-section style="opacity: 0.9; border-radius: 25px;" class="bg-grey-10 q-mt-lg">
+                  <div class="text-h5 text-white textKdam q-mt-sm q-mb-xs">KHD</div>
+                  <div class="text-caption textKdam bg-grey-10 text-grey">
+                    <span class="text-italic" v-if="pt">khd</span> <span v-if="!pt">Aka khd</span>
+                    <br>
+                    <br> <span class="q-gutter-x-xs text-center"> </span>
+                    <span class="text-bold" v-if="pt">Admin Moderator</span> <span v-if="!pt">Admin Moderator</span>
+                    <br> <br> <span class="q-gutter-x-xs text-center">
+                      <q-icon size="xs" color="green" name="fa-solid fa-flag" /> <span
+                        class="text-bold text-subtitle2">BR</span>
+                    </span>
+                  </div>
+                </q-card-section>
+              </q-card>
+            </q-intersection>
+          </div>
+
+
+
+
+        </div>
+
+        <q-intersection transition="slide-left" transition-duration="900" once class="example-item">
+          <div style="width: 100vw; heigh: 14vh; margin-top: 17vh;"
+            class="flex items-center justify-center flex-center text-center ">
+            <h2 class="text-bold mainFont text-white">
+              Helpers <span class="blink">|</span>
+            </h2>
+          </div>
+        </q-intersection>
+
+        <div style="width: 100vw; padding-bottom: 50vh; margin-top: 35vh;"
+          class="container flex q-mb-md row flex-center q-gutter-x-sm  justify-center">
+          <div class="col  flex flex-center">
+            <q-intersection transition="slide-left" transition-duration="3500" once class="example-item">
+              <q-card style="top: -7em; border-radius: 25px;" class="my-card-mod q-mb-xl bg-transparent" flat bordered>
+                <div style="border-radius: 25px;" class="flex items-center justify-center">
+                  <q-img style="border-radius: 200px;" v-on:mouseenter="cardHover = true"
+                    v-on:mouseleave="cardHover = false" class="backgroundImage11-xl" />
+                </div>
+
+                <q-card-section style="opacity: 0.9;  border-radius: 20px;" class="bg-grey-10 q-mt-lg">
+                  <div class="text-h5 text-white textKdam q-mt-sm q-mb-xs">Douglashra.sol</div>
+                  <div class="text-caption textKdam bg-grey-10 text-grey">
+                    <span class="text-italic" v-if="pt">douglashra.sol</span> <span v-if="!pt">Aka douglas</span>
+                    <br>
+                    <br> <span class="q-gutter-x-xs text-center"> </span>
+                    <span class="text-bold" v-if="pt">Group Helper</span> <span v-if="!pt">Discord Manager</span>
+                    <br> <br> <span class="q-gutter-x-xs text-center">
+                      <q-icon size="xs" color="green" name="fa-solid fa-flag" /> <span
+                        class="text-bold text-subtitle2">BR</span>
+                    </span>
+                  </div>
+                </q-card-section>
+              </q-card>
+            </q-intersection>
+          </div>
+          <div class="col flex flex-center">
+            <q-intersection transition="slide-left" transition-duration="2400" once class="example-item">
+              <q-card style="top: -7em; border-radius: 25px;" class="my-card-mod q-mb-xl bg-transparent" flat bordered>
+                <div style="border-radius: 25px;" class="flex items-center justify-center">
+                  <q-img style="border-radius: 200px;" v-on:mouseenter="cardHover = true"
+                    v-on:mouseleave="cardHover = false" class="backgroundImage12-xl" />
+                </div>
+
+                <q-card-section style="opacity: 0.9;  border-radius: 20px;" class="bg-grey-10 q-mt-lg">
+                  <div class="text-h5 text-white textKdam q-mt-sm q-mb-xs">Vt</div>
+                  <div class="text-caption textKdam bg-grey-10 text-grey">
+                    <span class="text-italic" v-if="pt">Vt</span> <span v-if="!pt">Aka Vt</span>
+                    <br>
+                    <br> <span class="q-gutter-x-xs text-center"> </span>
+                    <span class="text-bold" v-if="pt">Group Helper</span> <span v-if="!pt">Group Helper</span>
+                    <br> <br> <span class="q-gutter-x-xs text-center">
+                      <q-icon size="xs" color="green" name="fa-solid fa-flag" /> <span
+                        class="text-bold text-subtitle2">BR</span>
+                    </span>
+                  </div>
+                </q-card-section>
+              </q-card>
+            </q-intersection>
+          </div>
+
+          <div class="col flex flex-center">
+            <q-intersection transition="slide-left" transition-duration="800" once class="example-item">
+              <q-card style="top: -7em; border-radius: 45px 45px 0 0;" class="my-card-mod q-mb-xl bg-transparent" flat bordered>
+                <div style="border-radius: 25px;" class="flex items-center justify-center">
+                  <q-img style="border-radius: 200px;" v-on:mouseenter="cardHover = true"
+                    v-on:mouseleave="cardHover = false" class="backgroundImage13-xl" />
+                </div>
+
+                <q-card-section style="opacity: 0.9; border-radius: 20px;" class="bg-grey-10 q-mt-lg">
+                  <div class="text-h5 text-white textKdam q-mt-sm q-mb-xs">Sakamoto</div>
+                  <div class="text-caption textKdam bg-grey-10 text-grey">
+                    <span class="text-italic" v-if="pt">Sakamoto</span> <span v-if="!pt">Aka Sakamoto</span>
+                    <br>
+                    <br> <span class="q-gutter-x-xs text-center"> </span>
+                    <span class="text-bold" v-if="pt">Group Helper</span> <span v-if="!pt">Group Helper</span>
+                    <br> <br> <span class="q-gutter-x-xs text-center">
+                      <q-icon size="xs" color="green" name="fa-solid fa-flag" /> <span
+                        class="text-bold text-subtitle2">BR</span>
+                    </span>
+                  </div>
+                </q-card-section>
+              </q-card>
+            </q-intersection>
+          </div>
+
+
+
+
         </div>
 
 
@@ -570,6 +885,11 @@ export default defineComponent({
   height: 33vh;
 }
 
+.my-card-mod {
+  width: 17vw;
+  height: 10vh;
+}
+
 .backgroundImage0-xl {
   width: 40vw;
   height: 42vh;
@@ -678,9 +998,151 @@ export default defineComponent({
   background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1031311769290932355/blood.jpeg");
 }
 
-.bgg-dark {
-  background-color: rgba(51, 49, 56, 0.18);
+.backgroundImage6-xl {
+  width: 40vw;
+  height: 42vh;
+  background-size: cover;
+  transition-duration: 1.3s;
+  background-position: 0;
+  background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1032917025435172874/bghitoki.jpg");
 }
+
+.backgroundImage6-xl:hover {
+  width: 40vw;
+  height: 42vh;
+  background-size: cover;
+  transition-duration: 1.3s;
+  background-position: 0;
+  background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1032917025661669436/IMG_20221019_121440_281.jpg");
+}
+
+.backgroundImage7-xl {
+  width: 40vw;
+  height: 42vh;
+  background-size: cover;
+  transition-duration: 1.3s;
+  background-position: 0;
+  background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1032921187489173586/radu.png");
+}
+
+.backgroundImage7-xl:hover {
+  width: 40vw;
+  height: 42vh;
+  background-size: cover;
+  transition-duration: 1.3s;
+  background-position: 0;
+  background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1032921187875029013/radu_1.png");
+}
+
+.backgroundImage8-xl {
+  width: 40vw;
+  height: 42vh;
+  background-size: cover;
+  transition-duration: 1.3s;
+  background-position: 0;
+  background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1032917026143993897/legolasbg.jpg");
+}
+
+.backgroundImage8-xl:hover {
+  width: 40vw;
+  height: 42vh;
+  background-size: cover;
+  transition-duration: 1.3s;
+  background-position: 0;
+  background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1032917025116409866/legolas.jpg");
+}
+
+.backgroundImage9-xl {
+  width: 40vw;
+  height: 42vh;
+  background-size: cover;
+  transition-duration: 1.3s;
+  background-position: 0;
+  background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1032931223745605693/issabg.jpg");
+}
+
+.backgroundImage9-xl:hover {
+  width: 40vw;
+  height: 42vh;
+  background-size: cover;
+  transition-duration: 1.3s;
+  background-position: 0;
+  background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1032931224055988306/issa.jpg");
+}
+
+.backgroundImage10-xl {
+  width: 40vw;
+  height: 42vh;
+  background-size: cover;
+  transition-duration: 1.3s;
+  background-position: 0;
+  background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1032931224370544690/khdbg.jpg");
+}
+
+.backgroundImage10-xl:hover {
+  width: 40vw;
+  height: 42vh;
+  background-size: cover;
+  transition-duration: 1.3s;
+  background-position: 0;
+  background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1032931223493935104/khd.jpg");
+}
+
+.backgroundImage11-xl {
+  width: 70vw;
+  height: 42vh;
+  background-size: cover;
+  transition-duration: 1.3s;
+  background-position: 0;
+  background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1032920584608284712/unknown_2.png");
+}
+
+.backgroundImage11-xl:hover {
+  width: 70vw;
+  height: 42vh;
+  background-size: cover;
+  transition-duration: 1.3s;
+  background-position: 0;
+  background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1032920585031917668/unknown_2_1.png");
+}
+
+.backgroundImage12-xl {
+  width: 70vw;
+  height: 42vh;
+  background-size: cover;
+  transition-duration: 1.3s;
+  background-position: 0;
+  background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1032920586147610634/vtbg.png");
+}
+
+.backgroundImage12-xl:hover {
+  width: 70vw;
+  height: 42vh;
+  background-size: cover;
+  transition-duration: 1.3s;
+  background-position: 0;
+  background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1032920582720868352/vt.png");
+}
+
+.backgroundImage13-xl {
+  width: 70vw;
+  height: 42vh;
+  background-size: cover;
+  transition-duration: 1.3s;
+  background-position: 0;
+  background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1032920583178027039/sakamotobg.png");
+}
+
+.backgroundImage13-xl:hover {
+  width: 70vw;
+  height: 42vh;
+  background-size: cover;
+  transition-duration: 1.3s;
+  background-position: 0;
+  background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1032920584205652028/sakamoto.png");
+}
+
+
 
 .spilineFont {
   font-family: 'Spline Sans Mono', monospace;
@@ -701,12 +1163,12 @@ export default defineComponent({
   background-repeat: no-repeat;
 }
 
-.fadeInLeft{
+.fadeInLeft {
   transition-duration: 1s;
   animation-duration: 1s;
 }
 
-.fadeInRight{
+.fadeInRight {
   transition-duration: 1s;
   animation-duration: 1s;
 }

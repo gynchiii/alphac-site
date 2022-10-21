@@ -4,7 +4,7 @@
     style="max-height: 100vh; background: radial-gradient(circle, #0057FF 5%, #0057FF 1%)">
       <q-toolbar class="absolute-top">
 
-        <q-toolbar-title class="titleFont">
+        <q-toolbar-title class="titleFont q-ml-xl q-pl-xl q-gutter-x-xs">
           <q-btn href="javascript:location.reload(true)" to="/" size="lg"
             class=" q-pl-xl titleFont text-white text-bold" rounded flat class-flex-flex-center q-ma-sm>
             <q-img
@@ -12,6 +12,9 @@
               style="width:3vw;">
 
             </q-img>
+          </q-btn>
+          <q-btn @click="pageCounter = 0" v-if="pageCounter === 4" icon="close" size="lg"
+            class=" q-pl-md titleFont text-white text-bold" rounded flat class-flex-flex-center q-ma-sm>
           </q-btn>
         </q-toolbar-title>
 
