@@ -4,8 +4,8 @@
       <q-toolbar class="absolute-top">
 
         <q-toolbar-title class="titleFont">
-          <q-btn to="/" size="lg"
-            class=" q-pl-xl titleFont text-white text-bold" rounded flat class-flex-flex-center q-ma-sm>
+          <q-btn to="/" size="lg" class=" q-pl-xl titleFont text-white text-bold" rounded flat class-flex-flex-center
+            q-ma-sm>
             <q-img
               src="https://cdn.discordapp.com/attachments/459557016042471454/1022390261957021717/299085275_1297684320974924_880665858629312467_n-removebg-preview.png"
               style="width:3vw;">
@@ -28,9 +28,39 @@
 
         </div>
       </q-toolbar>
-
-
     </div>
+
+    <div style="margin-top: -70vh;" class="flex flex-center text-center text-h4 text-bold titleFont text-white q-ma-md q-pa-md">
+      <q-intersection transition="slide-down" transition-duration="800" once class="example-item">
+      <span>Road-map.</span>
+    </q-intersection>
+    </div>
+
+    <q-intersection transition="slide-up" transition-duration="1200" once class="example-item">
+    <div style="height: 84vh; width: 100vw; margin-top: -82vh;" class="roadmap-grid row q-col-gutter-lg flex flex-center bg-dark">
+      <q-btn v-if="!roadmap1" @click="roadmap1 = true" v-on:mouseleave="roadmap1 = false" style="border-radius: 10px 0 0 0" icon="swap_vertical_circle" size="xl" class="roadmap-card text-gray-8 bgg-button-1 q-mx-xs ">
+      </q-btn>
+      <q-btn v-if="roadmap1" @click="roadmap1 = false"  style="border-radius: 10px 0 0 0" icon="swap_vertical_circle" size="xl" class="roadmap-card text-gray-8 bg-white q-mx-xs ">
+      </q-btn>
+
+      <q-btn v-if="!roadmap2" @click="roadmap2 = true" v-on:mouseleave="roadmap2 = false" style="border-radius: 0 10px 0 0" icon="swap_vertical_circle" size="xl" class="roadmap-card text-gray-8 bgg-button-2 q-mx-xs ">
+      </q-btn>
+      <q-btn v-if="roadmap2" @click="roadmap2 = false"  style="border-radius: 0 10px 0 0" icon="swap_vertical_circle" size="xl" class="roadmap-card text-gray-8 bg-white q-mx-xs ">
+      </q-btn>
+
+
+      <q-btn v-if="!roadmap3" @click="roadmap3 = true" v-on:mouseleave="roadmap3 = false" style="border-radius: 0 0 0 10px" icon="swap_vertical_circle" size="xl" class="roadmap-card text-gray-8 bgg-button-3 q-mx-xs ">
+      </q-btn>
+      <q-btn v-if="roadmap3" @click="roadmap3 = false"  style="border-radius: 0 0 0 10px" icon="swap_vertical_circle" size="xl" class="roadmap-card text-gray-8 bg-white q-mx-xs ">
+      </q-btn>
+
+      <q-btn v-if="!roadmap4" @click="roadmap4 = true" v-on:mouseleave="roadmap4 = false" style="border-radius: 0 0 10px 0" icon="swap_vertical_circle" size="xl" class="roadmap-card text-gray-8 bgg-button-4 q-mx-xs ">
+      </q-btn>
+      <q-btn v-if="roadmap4" @click="roadmap4 = false"  style="border-radius: 0 0 10px 0" icon="swap_vertical_circle" size="xl" class="roadmap-card text-gray-8 bg-white q-mx-xs ">
+      </q-btn>
+    </div>
+    </q-intersection>
+
 
 
 
@@ -45,7 +75,11 @@ export default defineComponent({
   data() {
     return {
       pageCounter: ref(0),
-      pt: true
+      pt: true,
+      roadmap1: false,
+      roadmap2: false,
+      roadmap3: false,
+      roadmap4: false,
     }
   }
 })
@@ -63,11 +97,70 @@ export default defineComponent({
   box-sizing: border-box;
 }
 
-.bgg-solana {
-  background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1022733258749915146/Untitled-video-Made-with-Clipchamp.gif");
-  background-repeat: no-repeat;
-  background-position: center;
+.bgg-button-1 {
+  background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1032959877863198720/col-1.png");
   background-size: cover;
+  background-position: center;
+  opacity: 0.89;
+}
+
+.bgg-button-1:hover {
+  background-image: url("https://discussions.apple.com/content/attachment/906013040");
+  transition-duration: 0.4s;
+  background-size: cover;
+  background-position: center;
+}
+
+.bgg-button-2 {
+  background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1032959878991450162/col-2.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.89;
+}
+
+.bgg-button-2:hover {
+  background-image: url("https://discussions.apple.com/content/attachment/906013040");
+  transition-duration: 0.4s;
+  background-size: cover;
+  background-position: center;
+}
+
+.bgg-button-3 {
+  background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1032960225650688010/col-3.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.89;
+}
+
+.bgg-button-3:hover {
+  background-image: url("https://discussions.apple.com/content/attachment/906013040");
+  transition-duration: 0.4s;
+  background-size: cover;
+  background-position: center;
+}
+
+.bgg-button-4 {
+  background-image: url("https://cdn.discordapp.com/attachments/459557016042471454/1032962742191149066/unknown.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.89;
+}
+
+.bgg-button-4:hover {
+  background-image: url("https://discussions.apple.com/content/attachment/906013040");
+  transition-duration: 0.4s;
+  background-size: cover;
+  background-position: center;
+}
+
+.roadmap-card {
+  width: 42vw;
+  height: 41vh;
+}
+
+.roadmap-grid {
+  width: 25vw;
+  height: 25vh;
 }
 
 .bgg-dark {
@@ -84,13 +177,6 @@ export default defineComponent({
 
 .mainFont {
   font-family: 'Lobster', cursive;
-}
-
-.bgg-init {
-  background-image: url("https://cdn.suwalls.com/wallpapers/abstract/blue-triangles-44901-2560x1600.jpg");
-  background-position: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .fadeIn {
