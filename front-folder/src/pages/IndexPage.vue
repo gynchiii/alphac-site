@@ -78,16 +78,24 @@
         </div>
       </div>
     </div>
-    <div class="bg-dark" style="width: 100vw;" v-if="pageCounter == 1">
+    <!-- Large screen -->
+    <div class="bg-dark gt-xs" style="width: 100vw;" v-if="pageCounter == 1">
       <div style="width: 100vw; height: 100vh;" class="flex flex-center full-width full-height row">
         <div style="margin-top: -3vh;" class="col flex flex-center q-pa-lg">
           <transition appear enter-active-class="animated backInDown">
             <div v-if="slideCounter === 0" style="font-size: 6vh; text-align: end;" class="titleFont text-bold flex flex-center text-white">
-              <span v-if="pt">
+              <span style="font-size: 6vh;" class="gt-md" v-if="pt">
                 AlphaC não é só um grupo, mas sim um conceito.
               </span>
-              <span v-if="!pt">
-                <!-- AlphaC isn't just a DAO, but a concept. A place. -->
+              <span style="font-size: 6vh;" class="gt-md" v-if="!pt">
+                AlphaC isn't just a DAO, but a concept. A place.
+              </span>
+
+              <span style="font-size: 2.9vh;" class="lt-lg" v-if="pt">
+                AlphaC não é só um grupo, mas sim um conceito.
+              </span>
+              <span style="font-size: 2.9vh;" class="lt-lg" v-if="!pt">
+                AlphaC isn't just a DAO, but a concept. A place.
               </span>
             </div>
           </transition>
@@ -104,14 +112,53 @@
         <div style="margin-top: 30vh;" class="col flex flex-center q-pa-lg">
           <transition appear enter-active-class="animated backInUp">
             <div v-if="(slideCounter != 1)" style="font-size: 5.5vh;" class="titleFont text-bold flex flex-center text-white">
-              <span v-if="(pt)">Um clube, uma DAO, uma família. <br> <br> Um lugar.</span>
-              <span v-if="!pt">Complete, rebuilded, made by community, to the community</span>
+              <span style="font-size: 5.5vh;" class="gt-md" v-if="(pt)">Um clube, uma DAO, uma família. <br> <br> Um lugar.</span>
+              <span style="font-size: 5.5vh;" class="gt-md" v-if="!pt">Complete, rebuilded, made by community, to the community</span>
+
+              <span style="font-size: 3vh;" class="lt-lg" v-if="(pt)">Um clube, uma DAO, uma família. <br> <br> Um lugar.</span>
+              <span style="font-size: 3vh;" class="lt-lg" v-if="!pt">Complete, rebuilded, made by community, to the community</span>
             </div>
           </transition>
           <div v-if="(slideCounter === 2)" style="font-size: 5.5vh; width: 90vw;" class=" text-bold flex flex-center text-white">
               <span class="fadeIn" v-if="(pt)">Oportunidades infinitas <br> te esperam na Web3</span>
               <span v-if="!pt">Complete, rebuilded, made by community, to the community</span>
             </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Small screen -->
+    <div class="bg-dark lt-sm" style="width: 100vw;" v-if="pageCounter == 1">
+      <div style="width: 100vw; height: 100vh;" class="flex flex-center full-width full-height column">
+        <div style="margin-top: 4vh;" class="col flex flex-center q-pa-lg">
+          <div v-if="slideCounter === 0" class="col flex flex-center q-pa-md">
+            <transition appear leave-active-class="animated fadeOut" enter-active-class="animated fadeIn">
+              <div  v-if="slideCounter === 0" class="titleFont solanaImage text-center flex flex-center text-accent">
+                <q-img style="width: 22vw; border-radius: 25px; margin-top: 13vh;"
+                  src="https://cdn.discordapp.com/attachments/459557016042471454/1022354189235519488/299085275_1297684320974924_880665858629312467_n.jpg">
+                </q-img>
+              </div>
+            </transition>
+          </div>
+          <transition appear enter-active-class="animated backInRight">
+            <div v-if="slideCounter === 0" style="font-size: 2.8vh; text-align: center;" class="titleFont text-bold flex flex-center text-white">
+              <span v-if="pt">
+                AlphaC não é só um grupo, mas sim um conceito.
+              </span>
+              <span v-if="!pt">
+                AlphaC isn't just a DAO, but a concept. A place.
+              </span>
+            </div>
+          </transition>
+        </div>
+        <div style="margin-top: 4vh;" class="col flex flex-center q-pa-lg">
+          <transition appear enter-active-class="animated backInLeft">
+            <div v-if="(slideCounter != 1)" style="font-size: 3vh; text-align: center;" class="titleFont text-bold flex flex-center text-white">
+              <span v-if="(pt)">Um clube, uma DAO,<br> Um lugar.</span>
+              <span v-if="!pt">Complete, rebuilded, made by community, to the community</span>
+            </div>
+          </transition>
         </div>
 
       </div>
@@ -152,67 +199,71 @@
 
     </div>
 
-    <div class="flex flex-center" style="width: 100vw;" v-if="pageCounter == 4">
-      <div style="width: 100vw; height: 100vh;" class="flex flex-center full-width full-height row">
-        <div class="wrap q-gutter-y-md">
-          <transition appear class="transition-1" enter-active-class="animated  backInUp"
-            leave-active-class="animated backInDown">
-            <p><a @mouseover="aboutTeamBg = true" @mouseleave="aboutTeamBg = false" href="/#/aboutteam" target=""
-                to="/aboutteam" class="underlined underlined--reverse">
-                <q-tooltip style="width: 14vw; height: 13vh;">
-                  <q-img style="width: 100%; height: 100%;"
-                    src="https://cdn.discordapp.com/attachments/459557016042471454/1028440057780129792/unknown.png">
+    <div class=" flex flex-center" style="width: 100vw;" v-if="pageCounter == 4">
+        <div style="width: 100vw;" class="flex flex-center full-width  row">
+          <div class="wrap q-gutter-y-md">
 
-                  </q-img>
-                </q-tooltip>
-                Como Fazer Parte
-              </a></p>
-          </transition>
-          <transition appear class="transition-2" enter-active-class="animated  backInUp"
-            leave-active-class="animated backInDown">
-            <p><a @mouseover="aboutTeamBg = true" @mouseleave="aboutTeamBg = false" href="/#/aboutteam" target=""
-                to="/aboutteam" class="underlined underlined--reverse">
-                <q-tooltip style="width: 14vw; height: 13vh;">
-                  <q-img style="width: 100%; height: 100%;"
-                    src="https://cdn.discordapp.com/attachments/459557016042471454/1028440057780129792/unknown.png">
+            <transition appear class="transition-1" enter-active-class="animated backInUp"
+              leave-active-class="animated backInDown">
+              <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false" href="/#/aboutproject"
+                  target="" to="/aboutproject" class="underlined underlined--reverse">
+                  <q-tooltip style="width: 14vw; height: 13vh;">
+                    <q-img style="width: 100%; height: 100%;"
+                      src="https://cdn.discordapp.com/attachments/459557016042471454/1037087504781803560/unknown.png">
 
-                  </q-img>
-                </q-tooltip>
-                Sobre o Time
-              </a></p>
-          </transition>
-          <transition appear class="transition-3" enter-active-class="animated backInUp"
-            leave-active-class="animated backInDown">
-            <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false" href="/#/aboutproject"
-                target="" to="/aboutproject" class="underlined underlined--reverse">
-                <q-tooltip style="width: 14vw; height: 13vh;">
-                  <q-img style="width: 100%; height: 100%;"
-                    src="https://cdn.discordapp.com/attachments/459557016042471454/1029663637981376572/unknown.png">
+                    </q-img>
+                  </q-tooltip>
+                  Pagamento via crypto
+                </a></p>
+            </transition>
 
-                  </q-img>
-                </q-tooltip>
-                Sobre o Projeto
-              </a></p>
-          </transition>
-          <transition appear class="transition-4" enter-active-class="animated backInUp"
-            leave-active-class="animated backInDown">
-            <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false" href="/#/aboutproject"
-                target="" to="/aboutproject" class="underlined underlined--reverse">
-                <q-tooltip style="width: 14vw; height: 13vh;">
-                  <q-img style="width: 100%; height: 100%;"
-                    src="https://cdn.discordapp.com/attachments/459557016042471454/1029663637981376572/unknown.png">
+            <transition appear class="transition-2" enter-active-class="animated backInUp"
+              leave-active-class="animated backInDown">
+              <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false" href="/#/aboutproject"
+                  target="" to="/aboutproject" class="underlined underlined--reverse">
+                  <q-tooltip style="width: 14vw; height: 13vh;">
+                    <q-img style="width: 100%; height: 100%;"
+                      src="https://cdn.discordapp.com/attachments/459557016042471454/1037087431230488606/unknown.png">
 
-                  </q-img>
-                </q-tooltip>
-                Guia Iniciante
-              </a></p>
-          </transition>
+                    </q-img>
+                  </q-tooltip>
+                  Pagamento via cartão
+                </a></p>
+            </transition>
+
+            <transition appear class="transition-3" enter-active-class="animated backInUp"
+              leave-active-class="animated backInDown">
+              <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false" href="/#/aboutproject"
+                  target="" to="/aboutproject" class="underlined underlined--reverse">
+                  <q-tooltip style="width: 14vw; height: 21vh;">
+                    <q-img style="width: 100%; height: 100%;"
+                      src="https://cdn.discordapp.com/attachments/459557016042471454/1037086003158073444/unknown.png">
+
+                    </q-img>
+                  </q-tooltip>
+                  Conheça o grupo
+                </a></p>
+            </transition>
+
+            <transition appear class="transition-4" enter-active-class="animated backInUp"
+              leave-active-class="animated backInDown">
+              <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false" href="/#/aboutproject"
+                  target="" to="/aboutproject" class="underlined underlined--reverse">
+                  <q-tooltip style="width: 14vw; height: 21vh;">
+                    <q-img style="width: 100%; height: 100%;"
+                      src="https://cdn.discordapp.com/attachments/459557016042471454/1037086003158073444/unknown.png">
+
+                    </q-img>
+                  </q-tooltip>
+                  Guia do Iniciante
+                </a></p>
+            </transition>
+          </div>
+
+
         </div>
 
-
       </div>
-
-    </div>
 
 
     <div v-if="(pageCounter === 0) && (pageCounter != 2)" style="width: 50vw; margin-top: -18vh;"
@@ -231,16 +282,25 @@
     <transition appear class="transition-33"  enter-active-class="animated fadeInRight">
       <div v-if="(pageCounter === 1) && (pageCounter != 2)"
         style="width: 50vw; margin-top: -18vh; margin-left: -15vw;" class="flex items-start justify-start q-pa-lg">
-        <q-btn v-if="slideCounter === 0" @click="(pageCounter +++ 1)"
-          style="width: 12vw; border-radius: 8px; height: 9vh; background: radial-gradient(circle, #5A6AFF 75%, #FFFFFF 165%)"
-          class="titleFont  flex flex-center shadow-11 row q-gutter-x-sm q-pa-md">
+        <q-btn v-if="slideCounter === 0" to="/aboutteam"
+          style="max-width: 60%; min-width: 12vw; border-radius: 8px; height: 9vh; background: radial-gradient(circle, #5A6AFF 75%, #FFFFFF 165%)"
+          class="titleFont gt-xs flex flex-center shadow-11 row q-gutter-x-sm q-pa-md">
           <span v-if="pt " style="text-decoration: ;" class=" text-white spanText col">Seguinte</span>
           <span v-if="!pt " style="text-decoration: ;" class=" text-white spanText col">Seguinte</span>
           <span v-if="!pt" style="text-decoration: ;" class=" text-white spanText col">Mint</span>
           <q-icon class="text-white" size="xs" name="arrow_right"></q-icon>
         </q-btn>
+
       </div>
     </transition>
+    <q-btn v-if="slideCounter === 0" to="/aboutteam"
+      style="width: 70%; border-radius: 8px; height: 7vh; background: radial-gradient(circle, #5A6AFF 75%, #FFFFFF 165%)"
+      class="titleFont lt-sm  flex flex-center shadow-11 row q-gutter-x-sm q-pa-md">
+      <span v-if="pt " style="text-decoration: ;" class=" text-white spanText col">Seguinte</span>
+      <span v-if="!pt " style="text-decoration: ;" class=" text-white spanText col">Seguinte</span>
+      <span v-if="!pt" style="text-decoration: ;" class=" text-white spanText col">Mint</span>
+      <q-icon class="text-white" size="xs" name="arrow_right"></q-icon>
+    </q-btn>
 
 
 

@@ -32,7 +32,7 @@
 
     <div style="margin-top: -70vh;" class="flex flex-center text-center text-h4 text-bold titleFont text-white q-ma-md q-pa-md">
       <q-intersection transition="slide-down" transition-duration="800" once class="example-item">
-      <span>Road-map.</span>
+      <span class="mainFont">Road-<span class="text-blue-2">map</span>.</span>
     </q-intersection>
     </div>
 
@@ -41,6 +41,7 @@
       <q-btn v-if="!roadmap1" @click="roadmap1 = true" v-on:mouseleave="roadmap1 = false" style="border-radius: 10px 0 0 0" icon="swap_vertical_circle" size="xl" class="roadmap-card text-gray-8 bgg-button-1 q-mx-xs ">
       </q-btn>
       <q-btn v-if="roadmap1" @click="roadmap1 = false"  style="border-radius: 10px 0 0 0" icon="swap_vertical_circle" size="xl" class="roadmap-card text-gray-8 bg-white q-mx-xs ">
+
       </q-btn>
 
       <q-btn v-if="!roadmap2" @click="roadmap2 = true" v-on:mouseleave="roadmap2 = false" style="border-radius: 0 10px 0 0" icon="swap_vertical_circle" size="xl" class="roadmap-card text-gray-8 bgg-button-2 q-mx-xs ">
