@@ -7,37 +7,58 @@
     <particles-bg v-if="pageCounter === 4" type="cobweb" color="#00FFA3" num="15" class="bg-dark" :bg="true" />
     <div style="width: 100vw; height: 100%;">
       <q-toolbar class="absolute-top">
-        <q-toolbar-title class="titleFont q-ml-xl q-pl-xl q-gutter-x-xs">
-          <q-btn to="/" size="lg" class="titleFont text-white text-bold" rounded flat class-flex-flex-center q-ma-sm>
-            <q-img
-              src="https://cdn.discordapp.com/attachments/459557016042471454/1022390261957021717/299085275_1297684320974924_880665858629312467_n-removebg-preview.png"
-              style="width:3vw;">
-            </q-img>
-          </q-btn>
-          <q-btn @click="pageCounter = 0" v-if="pageCounter === 4" icon="close" size="lg"
-            class=" q-pl-md titleFont text-white text-bold" rounded flat class-flex-flex-center q-ma-sm>
-          </q-btn>
-        </q-toolbar-title>
 
-        <div class="text-dark q-gutter-md flex flex-center q-gutter-x-md q-py-md q-pr-xl row">
-          <q-btn-group outline>
+<div style="margin-right: -50px;" class="flex lt-md q-ma-xs q-gutter-x-none">
+    <q-btn @click="pageCounter = 4" color="dark" dense style=""
+      class="titleFont bg-grey-5 text-black text-bold" icon="menu" />
+  </div>
+  <div style="margin-right: -95px;" class="flex q-ml-xl gt-sm q-ma-xs q-gutter-x-none">
+      <q-btn @click="pageCounter = 4" color="dark" flat fab style="opacity: 0.8;"
+        class="titleFont bg-white text-black text-bold" icon="menu" />
+    </div>
+<q-toolbar-title class="titleFont q-ml-xl q-pl-xl q-gutter-x-xs">
+  <q-btn to="/" size="lg"
+    class="  titleFont text-white text-bold" rounded flat class-flex-flex-center q-ma-sm>
+    <q-img
+      src="https://cdn.discordapp.com/attachments/459557016042471454/1022390261957021717/299085275_1297684320974924_880665858629312467_n-removebg-preview.png"
+      style="width:3.3vw;"
+      class="gt-md">
 
-            <div class="flex q-ma-xs q-gutter-x-none">
-              <q-btn @click="pageCounter = 4" color="dark" dense style="opacity: 0.8;"
-                class="titleFont bg-transparent text-dark text-bold" icon="menu" />
-            </div>
-            <div style="border-radius: 5px;" class="flex q-ma-xs q-gutter-x-none bg-white">
-              <q-btn @click="pt = false" rounded color="dark" flat style="opacity: 0.8;"
-                class="titleFont  text-dark text-bold" v-if="pt" label="EN" />
-              <q-btn @click="pt = true" rounded color="dark" flat style="opacity: 0.8;"
-                class="titleFont text-dark text-bold" v-if="!pt" label="PT" />
-            </div>
-            <q-btn color="dark" flat style="opacity: 0.8;" icon="fa-brands text-white fa-discord" />
-            <q-btn color="dark" flat style="opacity: 0.8;" icon="fa-brands text-white fa-twitter" />
-          </q-btn-group>
+    </q-img>
+    <q-img
+      src="https://cdn.discordapp.com/attachments/459557016042471454/1022390261957021717/299085275_1297684320974924_880665858629312467_n-removebg-preview.png"
+      style="width:5.4vw;"
+      class="lt-lg gt-sm">
 
-        </div>
-      </q-toolbar>
+    </q-img>
+    <q-img
+      src="https://cdn.discordapp.com/attachments/459557016042471454/1022390261957021717/299085275_1297684320974924_880665858629312467_n-removebg-preview.png"
+      style="width: 55px; margin-left: -100px;"
+      class="lt-md">
+
+    </q-img>
+  </q-btn>
+  <q-btn @click="pageCounter = 0" v-if="pageCounter === 4" icon="close" size="lg"
+    class=" q-pl-md gt-sm titleFont text-white text-bold" rounded flat class-flex-flex-center q-ma-sm>
+  </q-btn>
+</q-toolbar-title>
+
+<div class="text-dark flex flex-center q-gutter-x-md q-py-md q-pr-xl row">
+  <q-btn-group class="q-gutter-x-sm" outline>
+    <q-btn color="dark" flat style="opacity: 0.8;" icon="fa-brands text-white fa-discord" />
+    <q-btn color="dark" flat style="opacity: 0.8;" icon="fa-brands text-white fa-twitter" />
+  </q-btn-group>
+  <q-btn @click="pt = false" color="dark" flat style="opacity: 0.8;"
+    class="titleFont gt-sm  bg-grey-5 text-dark text-bold" v-if="pt" label="PT" />
+  <q-btn @click="pt = true" color="dark" flat style="opacity: 0.8;"
+    class="titleFont gt-sm bg-grey-5 text-dark text-bold" v-if="!pt" label="EN" />
+    <q-btn @click="pt = false" dense  color="dark" flat style="opacity: 0.8;"
+    class="titleFont lt-md bg-grey-4  q-pa-sm text-dark text-bold" v-if="pt" label="PT" />
+  <q-btn @click="pt = true" dense  color="dark" flat style="opacity: 0.8;"
+    class="titleFont lt-md bg-grey-4 q-pa-sm text-dark text-bold" v-if="!pt" label="EN" />
+
+</div>
+</q-toolbar>
       <!-- LARGE SCREEN -->
       <div class="gt-md" v-if="pageCounter != 4">
         <transition appear transition-duration="800" enter-active-class="animated fadeIn">
@@ -99,7 +120,7 @@
                           clas="text-h5"> "</span>
                       </div>
                       <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Empresário, acionista, dono de negócio, anos de experiência na
+                        <span clas="text-h5">"</span> Entrepreneur, shareholder, business owner, years of experience in
                         Blockchain
                         <br>
                         <br>
@@ -236,8 +257,9 @@
                           clas="text-h5"> "</span>
                       </div>
                       <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
-                        online casino
+                        <span clas="text-h5">"</span> Web Developer3 , 5+ years of exp in the programming area, 7+
+                        years
+                        of professional experience in the technical
                         <br>
                         <span style="text-decoration: underline;" class="text-italic">AlphaC CTO</span> <span
                           clas="text-h5"> "</span>
@@ -294,7 +316,7 @@
                           clas="text-h5"> "</span>
                       </div>
                       <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Desenvolvedor back-end, anos de experiência na blockchain, vasto portfolio multi-chain, experiências em Big-tech como analista de Blockchain e lider de projeto
+                        <span clas="text-h5">"</span> Back-end developer, years of experience in blockchain, large multi-chain portfolio, experiences in big-tech as a blockchain analyst and project leader
                         <br>
                         <br>
                         <span style="text-decoration: underline;" class="text-italic">Alpha C CPO</span> <span
@@ -339,26 +361,27 @@
                     text-color="white" />
 
                   <q-space />
-                  <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded3 ? 'OK' : 'Sobre'"
-                    color="white" rounded flat dense :icon="expanded3 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded3 = !expanded3" />
-                  <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded3 ? 'OK' : 'About'"
-                    color="white" rounded flat dense :icon="expanded3 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded3 = !expanded3" />
+                  <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded5 ? 'OK' : 'Sobre'"
+                    color="white" rounded flat dense :icon="expanded5 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                    @click="expanded5 = !expanded5" />
+                  <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded5 ? 'OK' : 'About'"
+                    color="white" rounded flat dense :icon="expanded5 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                    @click="expanded5 = !expanded5" />
                 </q-card-actions>
 
                 <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
-                  <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded3">
+                  <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded5">
                     <q-separator />
                     <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
                       class="text-subitle2 titleFont text-white bg-black">
                       <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> 9+ Anos de experiência de mercado Web2 gerindo B2B e B2C, lider de comunicação do AlphaC, atual dono de negócio.
+                        <span clas="text-h5">"</span> 9+ Anos de experiência de mercado Web2 gerindo B2B e B2C, lider de comunicação do AlphaC, atual dono de negócio. <br><br>
                         <span style="text-decoration: underline;" class="text-italic q-pt-sm"> Atual CM AlphaC </span> <span
                           clas="text-h5"> "</span>
                       </div>
                       <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> 9+ Anos de experiência de mercado Web2 gerindo B2B e B2C, lider de comunicação do AlphaC, atual dono de negócio.
+                        <span clas="text-h5">"</span> 9+ Years Web2 market experience managing B2B and B2C, AlphaC communication leader, current business owner.
+                        <br>
                         <br>
                         <span style="text-decoration: underline;" class="text-italic">Alpha C CM</span> <span
                           clas="text-h5"> "</span>
@@ -396,29 +419,29 @@
                     text-color="white" />
 
                   <q-space />
-                  <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded4 ? 'OK' : 'Sobre'"
-                    color="white" rounded flat dense :icon="expanded4 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded4 = !expanded4" />
-                  <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded4 ? 'OK' : 'About'"
-                    color="white" rounded flat dense :icon="expanded4 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded4 = !expanded4" />
+                  <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded6 ? 'OK' : 'Sobre'"
+                    color="white" rounded flat dense :icon="expanded6 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                    @click="expanded6 = !expanded6" />
+                  <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded6 ? 'OK' : 'About'"
+                    color="white" rounded flat dense :icon="expanded6 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                    @click="expanded6 = !expanded6" />
                 </q-card-actions>
 
                 <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
-                  <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded4">
+                  <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded6">
                     <q-separator />
                     <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
                       class="text-subitle2 titleFont text-white bg-black">
                       <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Vasta experiência gerinco collabs na Web3, gerente de parcerias entre projetos, e responsável por gerenciar eventos de comunicação, como Twitter Spaces, AMA's... Trabalha atualmente em + projetos web3 na SOL.  <br>
-                        <span style="text-decoration: underline;" class="text-italic"> Criador do AlphaC </span> <span
+                        <span clas="text-h5">"</span> Vasta experiência gerinco collabs na Web3, gerente de parcerias entre projetos, e responsável por gerenciar eventos de comunicação, como Twitter Spaces, AMA's... Trabalha atualmente em + projetos web3 na SOL.  <br><br>
+                        <span style="text-decoration: underline;" class="text-italic"> Atual Collab Manager AlphaC </span> <span
                           clas="text-h5"> "</span>
                       </div>
                       <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
-                        online casino
+                        <span clas="text-h5">"</span> Extensive experience managing collabs at Web3, managing partnerships between projects, and responsible for managing communication events such as Twitter Spaces, AMA's... Currently working on + web3 projects at SOL.
                         <br>
-                        <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
+                        <br>
+                        <span style="text-decoration: underline;" class="text-italic">AlphaC Collab Manager</span> <span
                           clas="text-h5"> "</span>
                       </div>
                     </q-card-section>
@@ -464,31 +487,29 @@
                     text-color="white" />
 
                   <q-space />
-                  <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded3 ? 'OK' : 'Sobre'"
-                    color="white" rounded flat dense :icon="expanded3 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded3 = !expanded3" />
-                  <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded3 ? 'OK' : 'About'"
-                    color="white" rounded flat dense :icon="expanded3 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded3 = !expanded3" />
+                  <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded7 ? 'OK' : 'Sobre'"
+                    color="white" rounded flat dense :icon="expanded7 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                    @click="expanded7 = !expanded7" />
+                  <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded7 ? 'OK' : 'About'"
+                    color="white" rounded flat dense :icon="expanded7 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                    @click="expanded7 = !expanded7" />
                 </q-card-actions>
 
                 <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
-                  <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded3">
+                  <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded7">
                     <q-separator />
                     <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
                       class="text-subitle2 titleFont text-white bg-black">
                       <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Desenvolvedor Web3 , 5+ anos de exp na área de programação, 7+
-                        anos
-                        de experiência profissional na área técnica
-                        <span style="text-decoration: underline;" class="text-italic q-pt-sm"> Atual CTO </span> <span
+                        <span clas="text-h5">"</span> Vasta experiência em negócio, anos de background em tecnologia, e +2 anos de background em blockchain <br><br>
+                        <span style="text-decoration: underline;" class="text-italic q-pt-sm"> Atual Discord Manager </span> <span
                           clas="text-h5"> "</span>
                       </div>
                       <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
-                        online casino
+                        <span clas="text-h5">"</span> Extensive business experience, years of background in technology, and +2 years of background in blockchain
                         <br>
-                        <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
+                        <br>
+                        <span style="text-decoration: underline;" class="text-italic">AlphaC Discord Manager</span> <span
                           clas="text-h5"> "</span>
                       </div>
                     </q-card-section>
@@ -524,32 +545,29 @@
                     text-color="white" />
 
                   <q-space />
-                  <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded4 ? 'OK' : 'Sobre'"
-                    color="white" rounded flat dense :icon="expanded4 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded4 = !expanded4" />
-                  <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded4 ? 'OK' : 'About'"
-                    color="white" rounded flat dense :icon="expanded4 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded4 = !expanded4" />
+                  <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded8 ? 'OK' : 'Sobre'"
+                    color="white" rounded flat dense :icon="expanded8 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                    @click="expanded8 = !expanded8" />
+                  <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded8 ? 'OK' : 'About'"
+                    color="white" rounded flat dense :icon="expanded8 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                    @click="expanded8 = !expanded8" />
                 </q-card-actions>
 
                 <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
-                  <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded4">
+                  <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded8">
                     <q-separator />
                     <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
                       class="text-subitle2 titleFont text-white bg-black">
                       <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Streamer Brasileiro, Nº1 em CryptoGames , atualmente tem parcerias
-                        no
-                        ramo de casino, e direciona suas
-                        lives para tais assuntos. <br>
-                        <span style="text-decoration: underline;" class="text-italic"> Criador do AlphaC </span> <span
+                        <span clas="text-h5">"</span> Envolvido em diversos projetos na Solana, conta com background vasto como DeepDiver, fazendo análises profundas em cima das condições do mercado NFT. <br> <br>
+                        <span style="text-decoration: underline;" class="text-italic"> Atual DeepDiver AlphaC </span> <span
                           clas="text-h5"> "</span>
                       </div>
                       <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
-                        online casino
+                        <span clas="text-h5">"</span> Involved in several projects at Solana, he has a vast background as a DeepDiver, doing in-depth analysis on top of NFT market conditions.
                         <br>
-                        <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
+                        <br>
+                        <span style="text-decoration: underline;" class="text-italic">AlphaC DeepDiver </span> <span
                           clas="text-h5"> "</span>
                       </div>
                     </q-card-section>
@@ -789,39 +807,7 @@
                 <q-card-actions style="opacity: 0.8; border-radius: 0px 0px 4px 4px;" class="bg-black">
                   <q-btn class="textKdam text-caption" icon-right="fa-brands fa-twitter" flat color="dark"
                     text-color="white" />
-
-                  <q-space />
-                  <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded1 ? 'OK' : 'Sobre'"
-                    color="white" rounded flat dense :icon="expanded1 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded1 = !expanded1" />
-                  <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded1 ? 'OK' : 'About'"
-                    color="white" rounded flat dense :icon="expanded1 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded1 = !expanded1" />
                 </q-card-actions>
-
-                <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
-                  <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded1">
-                    <q-separator />
-                    <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
-                      class="text-subitle2 titleFont text-white bg-black">
-                      <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Streamer Brasileiro, Nº1 em CryptoGames , atualmente tem parcerias
-                        no
-                        ramo de casino, e direciona suas
-                        lives para tais assuntos. <br>
-                        <span style="text-decoration: underline;" class="text-italic"> Criador do AlphaC </span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                      <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
-                        online casino
-                        <br>
-                        <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                    </q-card-section>
-                  </div>
-                </q-slide-transition>
               </q-card>
             </transition>
           </div>
@@ -850,39 +836,7 @@
                 <q-card-actions style="opacity: 0.8; border-radius: 0px 0px 4px 4px;" class="bg-black">
                   <q-btn class="textKdam text-caption" icon-right="fa-brands fa-twitter" flat color="dark"
                     text-color="white" />
-
-                  <q-space />
-                  <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded2 ? 'OK' : 'Sobre'"
-                    color="white" rounded flat dense :icon="expanded2 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded2 = !expanded2" />
-                  <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded2 ? 'OK' : 'About'"
-                    color="white" rounded flat dense :icon="expanded2 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded2 = !expanded2" />
                 </q-card-actions>
-
-                <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
-                  <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded2">
-                    <q-separator />
-                    <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
-                      class="text-subitle2 titleFont text-white bg-black">
-                      <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Streamer Brasileiro, Nº1 em CryptoGames , atualmente tem parcerias
-                        no
-                        ramo de casino, e direciona suas
-                        lives para tais assuntos. <br>
-                        <span style="text-decoration: underline;" class="text-italic"> Criador do AlphaC </span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                      <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
-                        online casino
-                        <br>
-                        <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                    </q-card-section>
-                  </div>
-                </q-slide-transition>
               </q-card>
             </transition>
           </div>
@@ -925,38 +879,7 @@
                 <q-card-actions style="opacity: 0.8; border-radius: 0px 0px 4px 4px;" class="bg-black">
                   <q-btn class="textKdam text-caption" icon-right="fa-brands fa-twitter" flat color="dark"
                     text-color="white" />
-
-                  <q-space />
-                  <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded3 ? 'OK' : 'Sobre'"
-                    color="white" rounded flat dense :icon="expanded3 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded3 = !expanded3" />
-                  <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded3 ? 'OK' : 'About'"
-                    color="white" rounded flat dense :icon="expanded3 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded3 = !expanded3" />
                 </q-card-actions>
-
-                <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
-                  <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded3">
-                    <q-separator />
-                    <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
-                      class="text-subitle2 titleFont text-white bg-black">
-                      <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Desenvolvedor Web3 , 5+ anos de exp na área de programação, 7+
-                        anos
-                        de experiência profissional na área técnica
-                        <span style="text-decoration: underline;" class="text-italic q-pt-sm"> Atual CTO </span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                      <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
-                        online casino
-                        <br>
-                        <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                    </q-card-section>
-                  </div>
-                </q-slide-transition>
               </q-card>
             </q-intersection>
           </div>
@@ -986,38 +909,9 @@
                   <q-btn class="textKdam text-caption" icon-right="fa-brands fa-twitter" flat color="dark"
                     text-color="white" />
 
-                  <q-space />
-                  <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded4 ? 'OK' : 'Sobre'"
-                    color="white" rounded flat dense :icon="expanded4 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded4 = !expanded4" />
-                  <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded4 ? 'OK' : 'About'"
-                    color="white" rounded flat dense :icon="expanded4 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded4 = !expanded4" />
                 </q-card-actions>
 
-                <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
-                  <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded4">
-                    <q-separator />
-                    <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
-                      class="text-subitle2 titleFont text-white bg-black">
-                      <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Streamer Brasileiro, Nº1 em CryptoGames , atualmente tem parcerias
-                        no
-                        ramo de casino, e direciona suas
-                        lives para tais assuntos. <br>
-                        <span style="text-decoration: underline;" class="text-italic"> Criador do AlphaC </span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                      <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
-                        online casino
-                        <br>
-                        <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                    </q-card-section>
-                  </div>
-                </q-slide-transition>
+
               </q-card>
             </q-intersection>
           </div>
@@ -1053,37 +947,9 @@
                   <q-btn class="textKdam text-caption" icon-right="fa-brands fa-twitter" flat color="dark"
                     text-color="white" />
 
-                  <q-space />
-                  <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded3 ? 'OK' : 'Sobre'"
-                    color="white" rounded flat dense :icon="expanded3 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded3 = !expanded3" />
-                  <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded3 ? 'OK' : 'About'"
-                    color="white" rounded flat dense :icon="expanded3 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded3 = !expanded3" />
+
                 </q-card-actions>
 
-                <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
-                  <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded3">
-                    <q-separator />
-                    <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
-                      class="text-subitle2 titleFont text-white bg-black">
-                      <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Desenvolvedor Web3 , 5+ anos de exp na área de programação, 7+
-                        anos
-                        de experiência profissional na área técnica
-                        <span style="text-decoration: underline;" class="text-italic q-pt-sm"> Atual CTO </span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                      <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
-                        online casino
-                        <br>
-                        <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                    </q-card-section>
-                  </div>
-                </q-slide-transition>
               </q-card>
             </q-intersection>
           </div>
@@ -1113,38 +979,9 @@
                   <q-btn class="textKdam text-caption" icon-right="fa-brands fa-twitter" flat color="dark"
                     text-color="white" />
 
-                  <q-space />
-                  <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded4 ? 'OK' : 'Sobre'"
-                    color="white" rounded flat dense :icon="expanded4 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded4 = !expanded4" />
-                  <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded4 ? 'OK' : 'About'"
-                    color="white" rounded flat dense :icon="expanded4 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded4 = !expanded4" />
+
                 </q-card-actions>
 
-                <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
-                  <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded4">
-                    <q-separator />
-                    <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
-                      class="text-subitle2 titleFont text-white bg-black">
-                      <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Streamer Brasileiro, Nº1 em CryptoGames , atualmente tem parcerias
-                        no
-                        ramo de casino, e direciona suas
-                        lives para tais assuntos. <br>
-                        <span style="text-decoration: underline;" class="text-italic"> Criador do AlphaC </span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                      <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
-                        online casino
-                        <br>
-                        <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                    </q-card-section>
-                  </div>
-                </q-slide-transition>
               </q-card>
             </q-intersection>
           </div>
@@ -1184,37 +1021,7 @@
                   <q-btn class="textKdam text-caption" icon-right="fa-brands fa-twitter" flat color="dark"
                     text-color="white" />
 
-                  <q-space />
-                  <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded3 ? 'OK' : 'Sobre'"
-                    color="white" rounded flat dense :icon="expanded3 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded3 = !expanded3" />
-                  <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded3 ? 'OK' : 'About'"
-                    color="white" rounded flat dense :icon="expanded3 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded3 = !expanded3" />
                 </q-card-actions>
-
-                <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
-                  <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded3">
-                    <q-separator />
-                    <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
-                      class="text-subitle2 titleFont text-white bg-black">
-                      <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Desenvolvedor Web3 , 5+ anos de exp na área de programação, 7+
-                        anos
-                        de experiência profissional na área técnica
-                        <span style="text-decoration: underline;" class="text-italic q-pt-sm"> Atual CTO </span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                      <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
-                        online casino
-                        <br>
-                        <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                    </q-card-section>
-                  </div>
-                </q-slide-transition>
               </q-card>
             </q-intersection>
           </div>
@@ -1244,43 +1051,11 @@
                   <q-btn class="textKdam text-caption" icon-right="fa-brands fa-twitter" flat color="dark"
                     text-color="white" />
 
-                  <q-space />
-                  <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded4 ? 'OK' : 'Sobre'"
-                    color="white" rounded flat dense :icon="expanded4 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded4 = !expanded4" />
-                  <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded4 ? 'OK' : 'About'"
-                    color="white" rounded flat dense :icon="expanded4 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded4 = !expanded4" />
                 </q-card-actions>
 
-                <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
-                  <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded4">
-                    <q-separator />
-                    <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
-                      class="text-subitle2 titleFont text-white bg-black">
-                      <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Streamer Brasileiro, Nº1 em CryptoGames , atualmente tem parcerias
-                        no
-                        ramo de casino, e direciona suas
-                        lives para tais assuntos. <br>
-                        <span style="text-decoration: underline;" class="text-italic"> Criador do AlphaC </span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                      <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
-                        online casino
-                        <br>
-                        <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                    </q-card-section>
-                  </div>
-                </q-slide-transition>
               </q-card>
             </q-intersection>
           </div>
-
-
 
 
         </div>
@@ -1516,38 +1291,8 @@
                   <q-btn class="textKdam text-caption" icon-right="fa-brands fa-twitter" flat color="dark"
                     text-color="white" />
 
-                  <q-space />
-                  <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded1 ? 'OK' : 'Sobre'"
-                    color="white" rounded flat dense :icon="expanded1 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded1 = !expanded1" />
-                  <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded1 ? 'OK' : 'About'"
-                    color="white" rounded flat dense :icon="expanded1 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded1 = !expanded1" />
                 </q-card-actions>
 
-                <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
-                  <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded1">
-                    <q-separator />
-                    <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
-                      class="text-subitle2 titleFont text-white bg-black">
-                      <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Streamer Brasileiro, Nº1 em CryptoGames , atualmente tem parcerias
-                        no
-                        ramo de casino, e direciona suas
-                        lives para tais assuntos. <br>
-                        <span style="text-decoration: underline;" class="text-italic"> Criador do AlphaC </span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                      <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
-                        online casino
-                        <br>
-                        <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                    </q-card-section>
-                  </div>
-                </q-slide-transition>
               </q-card>
             </transition>
           </div>
@@ -1578,38 +1323,8 @@
                   <q-btn class="textKdam text-caption" icon-right="fa-brands fa-twitter" flat color="dark"
                     text-color="white" />
 
-                  <q-space />
-                  <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded2 ? 'OK' : 'Sobre'"
-                    color="white" rounded flat dense :icon="expanded2 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded2 = !expanded2" />
-                  <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded2 ? 'OK' : 'About'"
-                    color="white" rounded flat dense :icon="expanded2 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded2 = !expanded2" />
                 </q-card-actions>
 
-                <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
-                  <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded2">
-                    <q-separator />
-                    <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
-                      class="text-subitle2 titleFont text-white bg-black">
-                      <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Streamer Brasileiro, Nº1 em CryptoGames , atualmente tem parcerias
-                        no
-                        ramo de casino, e direciona suas
-                        lives para tais assuntos. <br>
-                        <span style="text-decoration: underline;" class="text-italic"> Criador do AlphaC </span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                      <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
-                        online casino
-                        <br>
-                        <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                    </q-card-section>
-                  </div>
-                </q-slide-transition>
               </q-card>
             </transition>
           </div>
@@ -1653,37 +1368,8 @@
                   <q-btn class="textKdam text-caption" icon-right="fa-brands fa-twitter" flat color="dark"
                     text-color="white" />
 
-                  <q-space />
-                  <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded3 ? 'OK' : 'Sobre'"
-                    color="white" rounded flat dense :icon="expanded3 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded3 = !expanded3" />
-                  <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded3 ? 'OK' : 'About'"
-                    color="white" rounded flat dense :icon="expanded3 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded3 = !expanded3" />
                 </q-card-actions>
 
-                <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
-                  <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded3">
-                    <q-separator />
-                    <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
-                      class="text-subitle2 titleFont text-white bg-black">
-                      <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Desenvolvedor Web3 , 5+ anos de exp na área de programação, 7+
-                        anos
-                        de experiência profissional na área técnica
-                        <span style="text-decoration: underline;" class="text-italic q-pt-sm"> Atual CTO </span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                      <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
-                        online casino
-                        <br>
-                        <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                    </q-card-section>
-                  </div>
-                </q-slide-transition>
               </q-card>
             </q-intersection>
           </div>
@@ -1714,38 +1400,8 @@
                   <q-btn class="textKdam text-caption" icon-right="fa-brands fa-twitter" flat color="dark"
                     text-color="white" />
 
-                  <q-space />
-                  <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded4 ? 'OK' : 'Sobre'"
-                    color="white" rounded flat dense :icon="expanded4 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded4 = !expanded4" />
-                  <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded4 ? 'OK' : 'About'"
-                    color="white" rounded flat dense :icon="expanded4 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded4 = !expanded4" />
                 </q-card-actions>
 
-                <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
-                  <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded4">
-                    <q-separator />
-                    <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
-                      class="text-subitle2 titleFont text-white bg-black">
-                      <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Streamer Brasileiro, Nº1 em CryptoGames , atualmente tem parcerias
-                        no
-                        ramo de casino, e direciona suas
-                        lives para tais assuntos. <br>
-                        <span style="text-decoration: underline;" class="text-italic"> Criador do AlphaC </span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                      <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
-                        online casino
-                        <br>
-                        <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                    </q-card-section>
-                  </div>
-                </q-slide-transition>
               </q-card>
             </q-intersection>
           </div>
@@ -1781,37 +1437,7 @@
                   <q-btn class="textKdam text-caption" icon-right="fa-brands fa-twitter" flat color="dark"
                     text-color="white" />
 
-                  <q-space />
-                  <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded3 ? 'OK' : 'Sobre'"
-                    color="white" rounded flat dense :icon="expanded3 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded3 = !expanded3" />
-                  <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded3 ? 'OK' : 'About'"
-                    color="white" rounded flat dense :icon="expanded3 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded3 = !expanded3" />
                 </q-card-actions>
-
-                <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
-                  <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded3">
-                    <q-separator />
-                    <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
-                      class="text-subitle2 titleFont text-white bg-black">
-                      <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Desenvolvedor Web3 , 5+ anos de exp na área de programação, 7+
-                        anos
-                        de experiência profissional na área técnica
-                        <span style="text-decoration: underline;" class="text-italic q-pt-sm"> Atual CTO </span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                      <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
-                        online casino
-                        <br>
-                        <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                    </q-card-section>
-                  </div>
-                </q-slide-transition>
               </q-card>
             </q-intersection>
           </div>
@@ -1842,38 +1468,8 @@
                   <q-btn class="textKdam text-caption" icon-right="fa-brands fa-twitter" flat color="dark"
                     text-color="white" />
 
-                  <q-space />
-                  <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded4 ? 'OK' : 'Sobre'"
-                    color="white" rounded flat dense :icon="expanded4 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded4 = !expanded4" />
-                  <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded4 ? 'OK' : 'About'"
-                    color="white" rounded flat dense :icon="expanded4 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded4 = !expanded4" />
                 </q-card-actions>
 
-                <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
-                  <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded4">
-                    <q-separator />
-                    <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
-                      class="text-subitle2 titleFont text-white bg-black">
-                      <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Streamer Brasileiro, Nº1 em CryptoGames , atualmente tem parcerias
-                        no
-                        ramo de casino, e direciona suas
-                        lives para tais assuntos. <br>
-                        <span style="text-decoration: underline;" class="text-italic"> Criador do AlphaC </span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                      <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
-                        online casino
-                        <br>
-                        <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                    </q-card-section>
-                  </div>
-                </q-slide-transition>
               </q-card>
             </q-intersection>
           </div>
@@ -1912,38 +1508,7 @@
                 <q-card-actions style="opacity: 0.8; border-radius: 0px 0px 4px 4px;" class="bg-black">
                   <q-btn class="textKdam text-caption" icon-right="fa-brands fa-twitter" flat color="dark"
                     text-color="white" />
-
-                  <q-space />
-                  <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded3 ? 'OK' : 'Sobre'"
-                    color="white" rounded flat dense :icon="expanded3 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded3 = !expanded3" />
-                  <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded3 ? 'OK' : 'About'"
-                    color="white" rounded flat dense :icon="expanded3 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded3 = !expanded3" />
                 </q-card-actions>
-
-                <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
-                  <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded3">
-                    <q-separator />
-                    <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
-                      class="text-subitle2 titleFont text-white bg-black">
-                      <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Desenvolvedor Web3 , 5+ anos de exp na área de programação, 7+
-                        anos
-                        de experiência profissional na área técnica
-                        <span style="text-decoration: underline;" class="text-italic q-pt-sm"> Atual CTO </span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                      <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
-                        online casino
-                        <br>
-                        <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                    </q-card-section>
-                  </div>
-                </q-slide-transition>
               </q-card>
             </q-intersection>
           </div>
@@ -1973,39 +1538,8 @@
                 <q-card-actions style="opacity: 0.8; border-radius: 0px 0px 4px 4px;" class="bg-black">
                   <q-btn class="textKdam text-caption" icon-right="fa-brands fa-twitter" flat color="dark"
                     text-color="white" />
-
-                  <q-space />
-                  <q-btn v-if="pt" class="text-bold text-italic text-white" :label="expanded4 ? 'OK' : 'Sobre'"
-                    color="white" rounded flat dense :icon="expanded4 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded4 = !expanded4" />
-                  <q-btn v-if="!pt" class="text-bold text-italic text-white" :label="expanded4 ? 'OK' : 'About'"
-                    color="white" rounded flat dense :icon="expanded4 ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="expanded4 = !expanded4" />
                 </q-card-actions>
 
-                <q-slide-transition style="border-radius: 0px 0px 30px 30px;">
-                  <div style="border-radius: 0px 0px 20px 20px;" v-show="expanded4">
-                    <q-separator />
-                    <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
-                      class="text-subitle2 titleFont text-white bg-black">
-                      <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Streamer Brasileiro, Nº1 em CryptoGames , atualmente tem parcerias
-                        no
-                        ramo de casino, e direciona suas
-                        lives para tais assuntos. <br>
-                        <span style="text-decoration: underline;" class="text-italic"> Criador do AlphaC </span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                      <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
-                        online casino
-                        <br>
-                        <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
-                          clas="text-h5"> "</span>
-                      </div>
-                    </q-card-section>
-                  </div>
-                </q-slide-transition>
               </q-card>
             </q-intersection>
           </div>
@@ -2210,24 +1744,12 @@
         <div style="width: 100vw;" class="flex flex-center full-width  row">
           <div class="wrap q-gutter-y-md">
 
+
+
             <transition appear class="transition-1" enter-active-class="animated backInUp"
               leave-active-class="animated backInDown">
-              <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false" href="/#/aboutproject"
-                  target="" to="/aboutproject" class="underlined underlined--reverse">
-                  <q-tooltip style="width: 14vw; height: 13vh;">
-                    <q-img style="width: 100%; height: 100%;"
-                      src="https://cdn.discordapp.com/attachments/459557016042471454/1037087504781803560/unknown.png">
-
-                    </q-img>
-                  </q-tooltip>
-                  Pagamento via crypto
-                </a></p>
-            </transition>
-
-            <transition appear class="transition-2" enter-active-class="animated backInUp"
-              leave-active-class="animated backInDown">
-              <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false" href="/#/aboutproject"
-                  target="" to="/aboutproject" class="underlined underlined--reverse">
+              <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false" href="https://lastlink.com/p/C7E722B3D"
+                  target="_blank"  class="underlined underlined--reverse">
                   <q-tooltip style="width: 14vw; height: 13vh;">
                     <q-img style="width: 100%; height: 100%;"
                       src="https://cdn.discordapp.com/attachments/459557016042471454/1037087431230488606/unknown.png">
@@ -2238,10 +1760,10 @@
                 </a></p>
             </transition>
 
-            <transition appear class="transition-3" enter-active-class="animated backInUp"
+            <transition appear class="transition-2" enter-active-class="animated backInUp"
               leave-active-class="animated backInDown">
-              <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false" href="/#/aboutproject"
-                  target="" to="/aboutproject" class="underlined underlined--reverse">
+              <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false" href="https://discord.gg/grupoalphac"
+                  target="_blank" t class="underlined underlined--reverse">
                   <q-tooltip style="width: 14vw; height: 21vh;">
                     <q-img style="width: 100%; height: 100%;"
                       src="https://cdn.discordapp.com/attachments/459557016042471454/1037086003158073444/unknown.png">
@@ -2252,13 +1774,13 @@
                 </a></p>
             </transition>
 
-            <transition appear class="transition-4" enter-active-class="animated backInUp"
+            <transition appear class="transition-3" enter-active-class="animated backInUp"
               leave-active-class="animated backInDown">
-              <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false" href="/#/aboutproject"
-                  target="" to="/aboutproject" class="underlined underlined--reverse">
+              <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false"
+                  target="" class="underlined underlined--reverse">
                   <q-tooltip style="width: 14vw; height: 21vh;">
                     <q-img style="width: 100%; height: 100%;"
-                      src="https://cdn.discordapp.com/attachments/459557016042471454/1037086003158073444/unknown.png">
+                      src="https://cdn.discordapp.com/attachments/459557016042471454/1037303085204258856/unknown.png">
 
                     </q-img>
                   </q-tooltip>
@@ -2303,6 +1825,11 @@ export default defineComponent({
       expanded2: ref(false),
       expanded3: ref(false),
       expanded4: ref(false),
+      expanded5: ref(false),
+      expanded6: ref(false),
+      expanded7: ref(false),
+      expanded8: ref(false),
+      expanded9: ref(false),
       lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     }
   }

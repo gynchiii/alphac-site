@@ -4,40 +4,59 @@
     style="max-height: 100vh; background: radial-gradient(circle, #0057FF 5%, #0057FF 1%)">
       <q-toolbar class="absolute-top">
 
+        <div style="margin-right: -100px;" class="flex lt-md q-ma-xs q-gutter-x-none">
+            <q-btn @click="pageCounter = 4" color="dark" dense style=""
+              class="titleFont bg-grey-5 text-black text-bold" icon="menu" />
+          </div>
+          <div style="margin-right: -95px;" class="flex q-ml-xl gt-sm q-ma-xs q-gutter-x-none">
+              <q-btn @click="pageCounter = 4" color="dark" flat fab style="opacity: 0.8;"
+                class="titleFont bg-white text-black text-bold" icon="menu" />
+            </div>
         <q-toolbar-title class="titleFont q-ml-xl q-pl-xl q-gutter-x-xs">
           <q-btn href="javascript:location.reload(true)" to="/" size="lg"
-            class=" q-pl-xl titleFont text-white text-bold" rounded flat class-flex-flex-center q-ma-sm>
+            class="  titleFont text-white text-bold" rounded flat class-flex-flex-center q-ma-sm>
             <q-img
               src="https://cdn.discordapp.com/attachments/459557016042471454/1022390261957021717/299085275_1297684320974924_880665858629312467_n-removebg-preview.png"
-              style="width:3vw;">
+              style="width:3.3vw;"
+              class="gt-md">
+
+            </q-img>
+            <q-img
+              src="https://cdn.discordapp.com/attachments/459557016042471454/1022390261957021717/299085275_1297684320974924_880665858629312467_n-removebg-preview.png"
+              style="width:5.4vw;"
+              class="lt-lg gt-sm">
+
+            </q-img>
+            <q-img
+              src="https://cdn.discordapp.com/attachments/459557016042471454/1022390261957021717/299085275_1297684320974924_880665858629312467_n-removebg-preview.png"
+              style="width: 55px;"
+              class="lt-md">
 
             </q-img>
           </q-btn>
           <q-btn @click="pageCounter = 0" v-if="pageCounter === 4" icon="close" size="lg"
-            class=" q-pl-md titleFont text-white text-bold" rounded flat class-flex-flex-center q-ma-sm>
+            class=" q-pl-md gt-sm titleFont text-white text-bold" rounded flat class-flex-flex-center q-ma-sm>
           </q-btn>
         </q-toolbar-title>
 
         <div class="text-dark flex flex-center q-gutter-x-md q-py-md q-pr-xl row">
           <q-btn-group class="q-gutter-x-sm" outline>
-            <div class="flex q-ma-xs q-gutter-x-none">
-              <q-btn @click="pageCounter = 4" color="dark" dense style="opacity: 0.8;"
-                class="titleFont bg-transparent text-dark text-bold" icon="menu" />
-            </div>
-            <div style="border-radius: 5px; background-color: rgb(255, 255, 255, 0.88);" class="flex shadow-4 q-ma-xs q-gutter-x-none">
-              <q-btn @click="pt = false" color="dark" flat style="opacity: 0.8;"
-                class="titleFont   text-dark text-bold" v-if="pt" label="EN" />
-              <q-btn @click="pt = true" color="dark" flat style="opacity: 0.8;"
-                class="titleFont  text-dark text-bold" v-if="!pt" label="PT" />
-            </div>
             <q-btn color="dark" flat style="opacity: 0.8;" icon="fa-brands text-white fa-discord" />
             <q-btn color="dark" flat style="opacity: 0.8;" icon="fa-brands text-white fa-twitter" />
           </q-btn-group>
+          <q-btn @click="pt = false" color="dark" flat style="opacity: 0.8;"
+            class="titleFont gt-sm  bg-grey-5 text-dark text-bold" v-if="pt" label="PT" />
+          <q-btn @click="pt = true" color="dark" flat style="opacity: 0.8;"
+            class="titleFont gt-sm bg-grey-5 text-dark text-bold" v-if="!pt" label="EN" />
+            <q-btn @click="pt = false" dense  color="dark" flat style="opacity: 0.8;"
+            class="titleFont lt-md bg-grey-4  q-pa-sm text-dark text-bold" v-if="pt" label="PT" />
+          <q-btn @click="pt = true" dense  color="dark" flat style="opacity: 0.8;"
+            class="titleFont lt-md bg-grey-4 q-pa-sm text-dark text-bold" v-if="!pt" label="EN" />
 
         </div>
       </q-toolbar>
       <div style="width: 100vw;" v-if="pageCounter == 0">
-        <div style="width: 100vw; height: 100vh;" class="flex bgg-solana column flex-center ">
+        <div style="width: 100vw; height: 100vh;" class="gt-sm flex bgg-solana column flex-center ">
           <div style="border-radius: 15px;" class="bgg-dark shadow-8">
             <div style="margin-top: 5vh;" class="col text-end q-ml-md flex flex-center q-pa-lg">
               <div style="font-size: 9vh;" class="mainFont text-center text-bold flex flex-center ">
@@ -74,6 +93,48 @@
               </div>
             </div>
           </div>
+
+
+        </div>
+
+        <div style="width: 100vw; height: 100vh;" class="lt-md flex bgg-solana column flex-center ">
+          <div style="border-radius: 15px;" class="bgg-dark shadow-8">
+            <div style="margin-top: 5vh;" class="col text-end q-ml-md flex flex-center q-pa-lg">
+              <div style="font-size: 3vh;" class="mainFont text-center text-bold flex flex-center ">
+                <span class="typewriter text-grey-4" v-if="(pt) && (!mintButton)"> Não se perca mais na
+                  <span style="opacity: 0.78;" class="text-accent">
+                    <span style="opacity: 0.78;" class="text-primary">
+                      Block
+                    </span>
+                    chain
+                  </span>
+                </span>
+
+                <span class="typewriter text-grey-4" v-if="(pt) && (mintButton)"> Vem <span
+                    class="text-accent">mintar</span> com a gente </span>
+
+                <span class="typewriter text-grey-4" v-if="!pt">
+                  <span style="opacity: 0.78;" class="text-accent">
+                    <span style="opacity: 0.78;" class="text-primary">
+                      Block
+                    </span>
+                    chain
+                  </span>
+                  in daily doses
+                </span>
+              </div>
+            </div>
+            <div style="margin-top: 1vh;" class="col text-end q-ml-md flex flex-center q-pa-lg">
+              <div style="font-size: 3vh;" class="mainFont text-italic flex flex-center text-grey-4">
+                <span data-show-after="1000" class="fadeIn" v-if="(pt) && (!mintButton)">Não Navegue mais
+                  sozinho!</span>
+                <span data-show-after="10000" class=" type2title text-bold" v-if="(pt) && (mintButton)">O que ta
+                  esperando? Bora!</span>
+                <span class="fadeIn" v-if="!pt">You choose the frequency</span>
+              </div>
+            </div>
+          </div>
+
 
         </div>
       </div>
@@ -203,24 +264,12 @@
         <div style="width: 100vw;" class="flex flex-center full-width  row">
           <div class="wrap q-gutter-y-md">
 
+
+
             <transition appear class="transition-1" enter-active-class="animated backInUp"
               leave-active-class="animated backInDown">
-              <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false" href="/#/aboutproject"
-                  target="" to="/aboutproject" class="underlined underlined--reverse">
-                  <q-tooltip style="width: 14vw; height: 13vh;">
-                    <q-img style="width: 100%; height: 100%;"
-                      src="https://cdn.discordapp.com/attachments/459557016042471454/1037087504781803560/unknown.png">
-
-                    </q-img>
-                  </q-tooltip>
-                  Pagamento via crypto
-                </a></p>
-            </transition>
-
-            <transition appear class="transition-2" enter-active-class="animated backInUp"
-              leave-active-class="animated backInDown">
-              <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false" href="/#/aboutproject"
-                  target="" to="/aboutproject" class="underlined underlined--reverse">
+              <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false" href="https://lastlink.com/p/C7E722B3D"
+                  target="_blank"  class="underlined underlined--reverse">
                   <q-tooltip style="width: 14vw; height: 13vh;">
                     <q-img style="width: 100%; height: 100%;"
                       src="https://cdn.discordapp.com/attachments/459557016042471454/1037087431230488606/unknown.png">
@@ -231,10 +280,10 @@
                 </a></p>
             </transition>
 
-            <transition appear class="transition-3" enter-active-class="animated backInUp"
+            <transition appear class="transition-2" enter-active-class="animated backInUp"
               leave-active-class="animated backInDown">
-              <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false" href="/#/aboutproject"
-                  target="" to="/aboutproject" class="underlined underlined--reverse">
+              <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false" href="https://discord.gg/grupoalphac"
+                  target="_blank" t class="underlined underlined--reverse">
                   <q-tooltip style="width: 14vw; height: 21vh;">
                     <q-img style="width: 100%; height: 100%;"
                       src="https://cdn.discordapp.com/attachments/459557016042471454/1037086003158073444/unknown.png">
@@ -245,7 +294,7 @@
                 </a></p>
             </transition>
 
-            <transition appear class="transition-4" enter-active-class="animated backInUp"
+            <transition appear class="transition-3" enter-active-class="animated backInUp"
               leave-active-class="animated backInDown">
               <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false" href="/#/aboutproject"
                   target="" to="/aboutproject" class="underlined underlined--reverse">
@@ -269,7 +318,7 @@
     <div v-if="(pageCounter === 0) && (pageCounter != 2)" style="width: 50vw; margin-top: -18vh;"
       class="flex flex-center items-center justify-center q-pa-lg">
       <q-btn v-on:mouseleave="mintButton = false" v-on:mouseover="mintButton = true" @click="(pageCounter +++ 1)"
-        style="width: 15vw; border-radius: 8px; height: 9vh; background: radial-gradient(circle, #8A3BD8 55%, #6CEAFF 165%)"
+        style="min-width: 15vw; max-width: 65%; border-radius: 8px; height: 9vh; background: radial-gradient(circle, #8A3BD8 55%, #6CEAFF 165%)"
         class="titleFont  flex flex-center shadow-11 row q-gutter-x-sm q-pa-md">
         <span v-if="pt && !mintButton" style="text-decoration: ;" class=" text-secondary spanText col">Continuar</span>
         <span v-if="pt && mintButton" style="text-decoration: ;" class=" text-secondary spanText col">Mint</span>
