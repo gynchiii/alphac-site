@@ -296,8 +296,8 @@
 
             <transition appear class="transition-3" enter-active-class="animated backInUp"
               leave-active-class="animated backInDown">
-              <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false" href="/#/aboutproject"
-                  target="" to="/aboutproject" class="underlined underlined--reverse">
+              <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false"
+                  target="" class="underlined underlined--reverse">
                   <q-tooltip style="width: 14vw; height: 21vh;">
                     <q-img style="width: 100%; height: 100%;"
                       src="https://cdn.discordapp.com/attachments/459557016042471454/1037086003158073444/unknown.png">
