@@ -6,11 +6,11 @@
 
         <div style="margin-right: -100px;" class="flex lt-md q-ma-xs q-gutter-x-none">
             <q-btn @click="pageCounter = 4" color="dark" dense style=""
-              class="titleFont bg-transparent text-black text-bold" icon="menu" />
+              class="titleFont bg-transparent text-white text-bold" icon="menu" />
           </div>
           <div style="margin-right: -95px;" class="flex q-ml-xl gt-sm q-ma-xs q-gutter-x-none">
               <q-btn @click="pageCounter = 4" color="dark" flat fab style="opacity: 0.8;"
-                class="titleFont bg-white text-black text-bold" icon="menu" />
+                class="titleFont bg-transparent text-white text-bold" icon="menu" />
             </div>
         <q-toolbar-title class="titleFont q-ml-xl q-pl-xl q-gutter-x-xs">
           <q-btn href="javascript:location.reload(true)" to="/" size="lg"
@@ -45,9 +45,9 @@
             <q-btn color="dark" flat style="opacity: 0.8;" icon="fa-brands text-white fa-twitter" />
           </q-btn-group>
           <q-btn @click="pt = false" color="dark" flat style="opacity: 0.8;"
-            class="titleFont gt-sm  bg-grey-5 text-dark text-bold" v-if="pt" label="PT" />
+            class="titleFont gt-sm  bg-white text-dark text-bold" v-if="pt" label="PT" />
           <q-btn @click="pt = true" color="dark" flat style="opacity: 0.8;"
-            class="titleFont gt-sm bg-grey-5 text-dark text-bold" v-if="!pt" label="EN" />
+            class="titleFont gt-sm bg-white text-dark text-bold" v-if="!pt" label="EN" />
             <q-btn @click="pt = false" dense  color="dark" flat style="opacity: 0.8;"
             class="titleFont lt-md bg-grey-4  q-pa-sm text-dark text-bold" v-if="pt" label="PT" />
           <q-btn @click="pt = true" dense  color="dark" flat style="opacity: 0.8;"

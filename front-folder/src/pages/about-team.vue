@@ -8,57 +8,54 @@
     <div style="width: 100vw; height: 100%;">
       <q-toolbar class="absolute-top">
 
-<div style="margin-right: -50px;" class="flex lt-md q-ma-xs q-gutter-x-none">
-    <q-btn @click="pageCounter = 4" color="dark" dense style=""
-      class="titleFont bg-transparent text-black text-bold" icon="menu" />
-  </div>
-  <div style="margin-right: -95px;" class="flex q-ml-xl gt-sm q-ma-xs q-gutter-x-none">
-      <q-btn @click="pageCounter = 4" color="dark" flat fab style="opacity: 0.8;"
-        class="titleFont bg-white text-black text-bold" icon="menu" />
-    </div>
-<q-toolbar-title class="titleFont q-ml-xl q-pl-xl q-gutter-x-xs">
-  <q-btn to="/" size="lg"
-    class="  titleFont text-white text-bold" rounded flat class-flex-flex-center q-ma-sm>
-    <q-img
-      src="https://cdn.discordapp.com/attachments/459557016042471454/1022390261957021717/299085275_1297684320974924_880665858629312467_n-removebg-preview.png"
-      style="width:3.3vw;"
-      class="gt-md">
+        <div style="margin-right: -100px;" class="flex lt-md q-ma-xs q-gutter-x-none">
+          <q-btn @click="pageCounter = 4" color="dark" dense style=""
+            class="titleFont bg-transparent text-white text-bold" icon="menu" />
+        </div>
+        <div style="margin-right: -95px;" class="flex q-ml-xl gt-sm q-ma-xs q-gutter-x-none">
+          <q-btn @click="pageCounter = 4" color="dark" flat fab style="opacity: 0.8;"
+            class="titleFont bg-transparent text-white text-bold" icon="menu" />
+        </div>
+        <q-toolbar-title class="titleFont q-ml-xl q-pl-xl q-gutter-x-xs">
+          <q-btn to="/" size="lg" class="  titleFont text-white text-bold"
+            rounded flat class-flex-flex-center q-ma-sm>
+            <q-img
+              src="https://cdn.discordapp.com/attachments/459557016042471454/1022390261957021717/299085275_1297684320974924_880665858629312467_n-removebg-preview.png"
+              style="width:3.3vw;" class="gt-md">
 
-    </q-img>
-    <q-img
-      src="https://cdn.discordapp.com/attachments/459557016042471454/1022390261957021717/299085275_1297684320974924_880665858629312467_n-removebg-preview.png"
-      style="width:5.4vw;"
-      class="lt-lg gt-sm">
+            </q-img>
+            <q-img
+              src="https://cdn.discordapp.com/attachments/459557016042471454/1022390261957021717/299085275_1297684320974924_880665858629312467_n-removebg-preview.png"
+              style="width:5.4vw;" class="lt-lg gt-sm">
 
-    </q-img>
-    <q-img
-      src="https://cdn.discordapp.com/attachments/459557016042471454/1022390261957021717/299085275_1297684320974924_880665858629312467_n-removebg-preview.png"
-      style="width: 55px; margin-left: -100px;"
-      class="lt-md">
+            </q-img>
+            <q-img
+              src="https://cdn.discordapp.com/attachments/459557016042471454/1022390261957021717/299085275_1297684320974924_880665858629312467_n-removebg-preview.png"
+              style="width: 55px;" class="lt-md">
 
-    </q-img>
-  </q-btn>
-  <q-btn @click="pageCounter = 0" v-if="pageCounter === 4" icon="close" size="lg"
-    class=" q-pl-md gt-sm titleFont text-white text-bold" rounded flat class-flex-flex-center q-ma-sm>
-  </q-btn>
-</q-toolbar-title>
+            </q-img>
+          </q-btn>
+          <q-btn @click="pageCounter = 0" v-if="pageCounter === 4" icon="close" size="lg"
+            class=" q-pl-md gt-sm titleFont text-white text-bold" rounded flat class-flex-flex-center q-ma-sm>
+          </q-btn>
+        </q-toolbar-title>
 
-<div class="text-dark flex flex-center q-gutter-x-md q-py-md q-pr-xl row">
-  <q-btn-group class="q-gutter-x-sm" outline>
-    <q-btn color="dark" flat style="opacity: 0.8;" icon="fa-brands text-white fa-discord" />
-    <q-btn color="dark" flat style="opacity: 0.8;" icon="fa-brands text-white fa-twitter" />
-  </q-btn-group>
-  <q-btn @click="pt = false" color="dark" flat style="opacity: 0.8;"
-    class="titleFont gt-sm  bg-grey-5 text-dark text-bold" v-if="pt" label="PT" />
-  <q-btn @click="pt = true" color="dark" flat style="opacity: 0.8;"
-    class="titleFont gt-sm bg-grey-5 text-dark text-bold" v-if="!pt" label="EN" />
-    <q-btn @click="pt = false" dense  color="dark" flat style="opacity: 0.8;"
-    class="titleFont lt-md bg-grey-4  q-pa-sm text-dark text-bold" v-if="pt" label="PT" />
-  <q-btn @click="pt = true" dense  color="dark" flat style="opacity: 0.8;"
-    class="titleFont lt-md bg-grey-4 q-pa-sm text-dark text-bold" v-if="!pt" label="EN" />
+        <div class="text-dark flex flex-center q-gutter-x-md q-py-md q-pr-xl row">
+          <q-btn-group class="q-gutter-x-sm" outline>
+            <q-btn color="dark" flat style="opacity: 0.8;" icon="fa-brands text-white fa-discord" />
+            <q-btn color="dark" flat style="opacity: 0.8;" icon="fa-brands text-white fa-twitter" />
+          </q-btn-group>
+          <q-btn @click="pt = false" color="dark" flat style="opacity: 0.8;"
+            class="titleFont gt-sm  bg-white text-dark text-bold" v-if="pt" label="PT" />
+          <q-btn @click="pt = true" color="dark" flat style="opacity: 0.8;"
+            class="titleFont gt-sm bg-white text-dark text-bold" v-if="!pt" label="EN" />
+          <q-btn @click="pt = false" dense color="dark" flat style="opacity: 0.8;"
+            class="titleFont lt-md bg-grey-4  q-pa-sm text-dark text-bold" v-if="pt" label="PT" />
+          <q-btn @click="pt = true" dense color="dark" flat style="opacity: 0.8;"
+            class="titleFont lt-md bg-grey-4 q-pa-sm text-dark text-bold" v-if="!pt" label="EN" />
 
-</div>
-</q-toolbar>
+        </div>
+      </q-toolbar>
       <!-- LARGE SCREEN -->
       <div class="gt-md" v-if="pageCounter != 4">
         <transition appear transition-duration="800" enter-active-class="animated fadeIn">
@@ -114,18 +111,18 @@
                     <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
                       class="text-subitle2 titleFont text-white bg-black">
                       <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Empresário, acionista, dono de negócio, anos de experiência na
+                        <span clas="text-h5"></span> Empresário, acionista, dono de negócio, anos de experiência na
                         Blockchain <br> <br>
                         <span style="text-decoration: underline;" class="text-italic"> Criador do AlphaC </span> <span
-                          clas="text-h5"> "</span>
+                          clas="text-h5"></span>
                       </div>
                       <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Entrepreneur, shareholder, business owner, years of experience in
+                        <span clas="text-h5"></span> Entrepreneur, shareholder, business owner, years of experience in
                         Blockchain
                         <br>
                         <br>
                         <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
-                          clas="text-h5"> "</span>
+                          clas="text-h5"></span>
                       </div>
                     </q-card-section>
                   </div>
@@ -174,20 +171,20 @@
                     <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
                       class="text-subitle2 titleFont text-white bg-black">
                       <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Streamer Brasileiro, Nº1 em CryptoGames , atualmente tem parcerias
+                        <span clas="text-h5"></span> Streamer Brasileiro, Nº1 em CryptoGames , atualmente tem parcerias
                         no
                         ramo de casino, e direciona suas
                         lives para tais assuntos. <br> <br>
                         <span style="text-decoration: underline;" class="text-italic"> Criador do AlphaC </span> <span
-                          clas="text-h5"> "</span>
+                          clas="text-h5"></span>
                       </div>
                       <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
+                        <span clas="text-h5"></span> Brazilian Streamer, Number 1 in crypto on SA and partner of some
                         online casino
                         <br>
                         <br>
                         <span style="text-decoration: underline;" class="text-italic">Alpha C creator</span> <span
-                          clas="text-h5"> "</span>
+                          clas="text-h5"></span>
                       </div>
                     </q-card-section>
                   </div>
@@ -250,19 +247,19 @@
                     <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
                       class="text-subitle2 titleFont text-white bg-black">
                       <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Desenvolvedor Web3 , 5+ anos de exp na área de programação, 7+
+                        <span clas="text-h5"></span> Desenvolvedor Web3 , 5+ anos de exp na área de programação, 7+
                         anos
                         de experiência profissional na área técnica
-                        <span style="text-decoration: underline;" class="text-italic q-pt-sm"> Atual CTO AlphaC </span> <span
-                          clas="text-h5"> "</span>
+                        <span style="text-decoration: underline;" class="text-italic q-pt-sm"> Atual CTO AlphaC </span>
+                        <span clas="text-h5"> </span>
                       </div>
                       <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Web Developer3 , 5+ years of exp in the programming area, 7+
+                        <span clas="text-h5"></span> Web Developer3 , 5+ years of exp in the programming area, 7+
                         years
                         of professional experience in the technical
                         <br>
                         <span style="text-decoration: underline;" class="text-italic">AlphaC CTO</span> <span
-                          clas="text-h5"> "</span>
+                          clas="text-h5"></span>
                       </div>
                     </q-card-section>
                   </div>
@@ -311,16 +308,19 @@
                     <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
                       class="text-subitle2 titleFont text-white bg-black">
                       <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Desenvolvedor back-end, anos de experiência na blockchain, vasto portfolio multi-chain, experiências em Big-tech como analista de Blockchain e lider de projeto <br> <br>
+                        <span clas="text-h5"></span> Desenvolvedor back-end, anos de experiência na blockchain, vasto
+                        portfolio multi-chain, experiências em Big-tech como analista de Blockchain e lider de projeto
+                        <br> <br>
                         <span style="text-decoration: underline;" class="text-italic"> Atual CPO AlphaC </span> <span
-                          clas="text-h5"> "</span>
+                          clas="text-h5"></span>
                       </div>
                       <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Back-end developer, years of experience in blockchain, large multi-chain portfolio, experiences in big-tech as a blockchain analyst and project leader
+                        <span clas="text-h5"></span> Back-end developer, years of experience in blockchain, large
+                        multi-chain portfolio, experiences in big-tech as a blockchain analyst and project leader
                         <br>
                         <br>
                         <span style="text-decoration: underline;" class="text-italic">Alpha C CPO</span> <span
-                          clas="text-h5"> "</span>
+                          clas="text-h5"></span>
                       </div>
                     </q-card-section>
                   </div>
@@ -375,16 +375,18 @@
                     <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
                       class="text-subitle2 titleFont text-white bg-black">
                       <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> 9+ Anos de experiência de mercado Web2 gerindo B2B e B2C, lider de comunicação do AlphaC, atual dono de negócio. <br><br>
-                        <span style="text-decoration: underline;" class="text-italic q-pt-sm"> Atual CM AlphaC </span> <span
-                          clas="text-h5"> "</span>
+                        <span clas="text-h5"></span> 9+ Anos de experiência de mercado Web2 gerindo B2B e B2C, lider de
+                        comunicação do AlphaC, atual dono de negócio. <br><br>
+                        <span style="text-decoration: underline;" class="text-italic q-pt-sm"> Atual CM AlphaC </span>
+                        <span clas="text-h5"></span>
                       </div>
                       <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> 9+ Years Web2 market experience managing B2B and B2C, AlphaC communication leader, current business owner.
+                        <span clas="text-h5"></span> 9+ Years Web2 market experience managing B2B and B2C, AlphaC
+                        communication leader, current business owner.
                         <br>
                         <br>
                         <span style="text-decoration: underline;" class="text-italic">Alpha C CM</span> <span
-                          clas="text-h5"> "</span>
+                          clas="text-h5"></span>
                       </div>
                     </q-card-section>
                   </div>
@@ -433,16 +435,20 @@
                     <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
                       class="text-subitle2 titleFont text-white bg-black">
                       <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Vasta experiência gerinco collabs na Web3, gerente de parcerias entre projetos, e responsável por gerenciar eventos de comunicação, como Twitter Spaces, AMA's... Trabalha atualmente em + projetos web3 na SOL.  <br><br>
-                        <span style="text-decoration: underline;" class="text-italic"> Atual Collab Manager AlphaC </span> <span
-                          clas="text-h5"> "</span>
+                        <span clas="text-h5"></span> Vasta experiência gerinco collabs na Web3, gerente de parcerias
+                        entre projetos, e responsável por gerenciar eventos de comunicação, como Twitter Spaces,
+                        AMA's... Trabalha atualmente em + projetos web3 na SOL. <br><br>
+                        <span style="text-decoration: underline;" class="text-italic"> Atual Collab Manager AlphaC
+                        </span> <span clas="text-h5"></span>
                       </div>
                       <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Extensive experience managing collabs at Web3, managing partnerships between projects, and responsible for managing communication events such as Twitter Spaces, AMA's... Currently working on + web3 projects at SOL.
+                        <span clas="text-h5"></span> Extensive experience managing collabs at Web3, managing
+                        partnerships between projects, and responsible for managing communication events such as Twitter
+                        Spaces, AMA's... Currently working on + web3 projects at SOL.
                         <br>
                         <br>
                         <span style="text-decoration: underline;" class="text-italic">AlphaC Collab Manager</span> <span
-                          clas="text-h5"> "</span>
+                          clas="text-h5"></span>
                       </div>
                     </q-card-section>
                   </div>
@@ -501,16 +507,18 @@
                     <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
                       class="text-subitle2 titleFont text-white bg-black">
                       <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Vasta experiência em negócio, anos de background em tecnologia, e +2 anos de background em blockchain <br><br>
-                        <span style="text-decoration: underline;" class="text-italic q-pt-sm"> Atual Discord Manager </span> <span
-                          clas="text-h5"> "</span>
+                        <span clas="text-h5"></span> Trabalhou por mais de 10 anos como SysAdmin, +3 anos como Streamer
+                        parceiro da Twitch e atualmente com foco em encontrar soluções para comunidades Web3.<br><br>
+                        <span style="text-decoration: underline;" class="text-italic q-pt-sm"> Atual Discord Manager
+                        </span> <span clas="text-h5"></span>
                       </div>
                       <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Extensive business experience, years of background in technology, and +2 years of background in blockchain
+                        <span clas="text-h5"></span> Worked for over 10 years as SysAdmin, +3 years as Streamer partner
+                        of Twitch and currently focused on finding solutions for Web3 communities.
                         <br>
                         <br>
-                        <span style="text-decoration: underline;" class="text-italic">AlphaC Discord Manager</span> <span
-                          clas="text-h5"> "</span>
+                        <span style="text-decoration: underline;" class="text-italic">AlphaC Discord Manager</span>
+                        <span clas="text-h5"></span>
                       </div>
                     </q-card-section>
                   </div>
@@ -559,16 +567,18 @@
                     <q-card-section style="opacity: 0.9; border-radius: 0px 0px 20px 20px;"
                       class="text-subitle2 titleFont text-white bg-black">
                       <div v-if="pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Envolvido em diversos projetos na Solana, conta com background vasto como DeepDiver, fazendo análises profundas em cima das condições do mercado NFT. <br> <br>
-                        <span style="text-decoration: underline;" class="text-italic"> Atual DeepDiver AlphaC </span> <span
-                          clas="text-h5"> "</span>
+                        <span clas="text-h5"></span> Envolvido em diversos projetos na Solana, conta com background
+                        vasto como DeepDiver, fazendo análises profundas em cima das condições do mercado NFT. <br> <br>
+                        <span style="text-decoration: underline;" class="text-italic"> Atual DeepDiver AlphaC </span>
+                        <span clas="text-h5"></span>
                       </div>
                       <div v-if="!pt" class="flex flex-center">
-                        <span clas="text-h5">"</span> Involved in several projects at Solana, he has a vast background as a DeepDiver, doing in-depth analysis on top of NFT market conditions.
+                        <span clas="text-h5"></span> Involved in several projects at Solana, he has a vast background as
+                        a DeepDiver, doing in-depth analysis on top of NFT market conditions.
                         <br>
                         <br>
                         <span style="text-decoration: underline;" class="text-italic">AlphaC DeepDiver </span> <span
-                          clas="text-h5"> "</span>
+                          clas="text-h5"></span>
                       </div>
                     </q-card-section>
                   </div>
@@ -1748,8 +1758,8 @@
 
             <transition appear class="transition-1" enter-active-class="animated backInUp"
               leave-active-class="animated backInDown">
-              <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false" href="https://lastlink.com/p/C7E722B3D"
-                  target="_blank"  class="underlined underlined--reverse">
+              <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false"
+                  href="https://lastlink.com/p/C7E722B3D" target="_blank" class="underlined underlined--reverse">
                   <q-tooltip style="width: 14vw; height: 13vh;">
                     <q-img style="width: 100%; height: 100%;"
                       src="https://cdn.discordapp.com/attachments/459557016042471454/1037087431230488606/unknown.png">
@@ -1762,8 +1772,8 @@
 
             <transition appear class="transition-2" enter-active-class="animated backInUp"
               leave-active-class="animated backInDown">
-              <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false" href="https://discord.gg/grupoalphac"
-                  target="_blank" t class="underlined underlined--reverse">
+              <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false"
+                  href="https://discord.gg/grupoalphac" target="_blank" t class="underlined underlined--reverse">
                   <q-tooltip style="width: 14vw; height: 21vh;">
                     <q-img style="width: 100%; height: 100%;"
                       src="https://cdn.discordapp.com/attachments/459557016042471454/1037086003158073444/unknown.png">
@@ -1776,8 +1786,8 @@
 
             <transition appear class="transition-3" enter-active-class="animated backInUp"
               leave-active-class="animated backInDown">
-              <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false"
-                  target="" class="underlined underlined--reverse">
+              <p><a @mouseover="aboutProjectBg = true" @mouseleave="aboutProjectBg = false" target=""
+                  class="underlined underlined--reverse">
                   <q-tooltip style="width: 14vw; height: 21vh;">
                     <q-img style="width: 100%; height: 100%;"
                       src="https://cdn.discordapp.com/attachments/459557016042471454/1037303085204258856/unknown.png">
