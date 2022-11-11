@@ -6,7 +6,7 @@
 
         <div style="margin-right: -100px;" class="flex lt-md q-ma-xs q-gutter-x-none">
             <q-btn @click="pageCounter = 4" color="dark" dense style=""
-              class="titleFont bg-grey-5 text-black text-bold" icon="menu" />
+              class="titleFont bg-transparent text-black text-bold" icon="menu" />
           </div>
           <div style="margin-right: -95px;" class="flex q-ml-xl gt-sm q-ma-xs q-gutter-x-none">
               <q-btn @click="pageCounter = 4" color="dark" flat fab style="opacity: 0.8;"
